@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public abstract class WrapperBase : BindableBase
+    public abstract class WrapperBase : ViewModelBase
     {
         public object Content { get; set; }
 
