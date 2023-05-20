@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    /// <summary>
+    /// <summary>//
     /// Indicates that the value of the marked element could be <c>null</c> sometimes,
     /// so checking for <c>null</c> is required before its usage.
     /// </summary>
