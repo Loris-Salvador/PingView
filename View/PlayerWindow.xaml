@@ -8,9 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     
     
-    <!--<UserControl.Resources>
+    <UserControl.Resources>
         <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-    </UserControl.Resources>-->
+    </UserControl.Resources>
 
     <DockPanel>
 
@@ -42,7 +42,28 @@
                 <Image Source="C:\Users\loris\Desktop\HEPL\C#\labo-final-LorisSal\PingView\Images/notes.png"/>
             </Button>
         </StackPanel>
-
+        
+        <!--Notes-->
+        
+        
+        <Grid x:Name="Notes" Background="Transparent" Width="400" DockPanel.Dock="Left" Visibility="{Binding IsGridNotesVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height ="0.6*"/>
+                <RowDefinition Height ="3.5*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Notes : " FontSize="18"  VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
+            <DataGrid AutoGenerateColumns="False" Grid.Row="1" Background="#3E4443" ItemsSource="{Binding notes, Mode=TwoWay}" Margin="10,10,10,10">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#3E4443" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" Width="*"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
 
         <!--Contour-->
 
@@ -61,7 +82,7 @@
 
             <!--ColonneJoueur-->
 
-            <Grid x:Name="Colonne1" Grid.ColumnSpan="{Binding Test}">
+            <Grid x:Name="Colonne1" Grid.ColumnSpan="{Binding SpanJoueur}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height ="0.7*"/>
                     <RowDefinition Height ="0.7*"/>
@@ -158,7 +179,7 @@
 
             <!--ColonneMatch-->
 
-            <Grid x:Name="Colonne3" Grid.Column="2">
+            <Grid x:Name="Colonne3" Grid.Column="2" Visibility="{Binding IsGridMatchesVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height ="0.15*"/>
                     <RowDefinition Height ="0.6*"/>
