@@ -1,6 +1,7 @@
 ﻿using Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ namespace ViewModel
     public class PlayerViewModel : ViewModelBase
     {
         private int _spanJoueur = 1;
-
         public int SpanJoueur
         {
             get { return _spanJoueur; }
@@ -53,11 +53,9 @@ namespace ViewModel
             }
         }
         public ICommand NoteCommand { get; }
-/*        public ICommand RechercherCommand { get; }
+        public ICommand RechercherCommand { get; }
         public ICommand ParametreCommand { get; }
-        public ICommand CalculateurCommand { get; }*/
-
-
+        public ICommand CalculateurCommand { get; }
 
         public PlayerViewModel()
         {
