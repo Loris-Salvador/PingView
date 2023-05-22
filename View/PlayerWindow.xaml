@@ -64,6 +64,10 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
+        
+        <!--Rechercher Joueur-->
+        
+        
 
         <!--Contour-->
 

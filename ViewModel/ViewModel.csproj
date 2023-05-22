@@ -45,6 +45,7 @@
     <Compile Include="MainViewModel.cs" />
     <Compile Include="PlayerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RechercherViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
