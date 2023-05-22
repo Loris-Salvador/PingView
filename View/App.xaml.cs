@@ -32,6 +32,7 @@ namespace View
 
         protected override void OnExit(ExitEventArgs e)
         {
+            //REGISTRY
             base.OnExit(e);
         }
     }

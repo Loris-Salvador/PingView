@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,8 +52,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechercherViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\AccesDB\AccesDB.csproj">
+      <Project>{c5424c36-b80e-4896-98a4-e365057967ef}</Project>
+      <Name>AccesDB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{27aa8714-ca50-45bb-b8c1-db4d020b9237}</Project>
       <Name>Infrastructure</Name>
@@ -60,6 +65,9 @@
       <Project>{0e1825ca-c0dc-40d1-a4af-0e1838cc505f}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

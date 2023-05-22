@@ -1,4 +1,5 @@
 ﻿using Infrastructure;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -8,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ViewModel.Command;
 using ViewModel.Navigation;
+using AccesDB;
 
 namespace ViewModel
 {
     public class PlayerViewModel : ViewModelBase//
     {
+        private readonly Joueur mainJoueur;
+
+        public string Club => mainJoueur.Club;
+
         private int _spanJoueur = 1;
         public int SpanJoueur
         {
@@ -60,6 +66,8 @@ namespace ViewModel
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
+            mainJoueur = new Joueur();
+            mainJoueur = AccesJoueur.getMainJoueur("150121");
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
         }
