@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\HomeCommand.cs" />
     <Compile Include="Command\NoteCommand.cs" />
     <Compile Include="Command\RechercherCommand.cs" />
     <Compile Include="MainViewModel.cs" />

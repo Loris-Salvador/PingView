@@ -8,18 +8,17 @@ using ViewModel.Navigation;
 
 namespace ViewModel.Command
 {
-    public class RechercherCommand : CommandBase
+    public class HomeCommand : CommandBase
     {
         private readonly NavigationStore _navigationStore;
-        public RechercherCommand(NavigationStore navigationStore)
+        public HomeCommand(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
         }
         public override void Execute(object parameter)
         {
-            Console.WriteLine("Rechercher Pressed");
-            _navigationStore.CurrentViewModel = new RechercherViewModel(_navigationStore);
+            Console.WriteLine("Home Pressed");
+            _navigationStore.CurrentViewModel = new PlayerViewModel(_navigationStore);
         }
     }
 }
-
