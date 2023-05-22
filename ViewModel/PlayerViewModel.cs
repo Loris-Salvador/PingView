@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ViewModel.Command;
+using ViewModel.Navigation;
 
 namespace ViewModel
 {
@@ -39,7 +40,7 @@ namespace ViewModel
             }
         }
 
-        private bool _isGridNotesVisible;
+        private bool _isGridNotesVisible = false;
 
         public bool IsGridNotesVisible
         {
@@ -57,9 +58,10 @@ namespace ViewModel
         public ICommand ParametreCommand { get; }
         public ICommand CalculateurCommand { get; }
 
-        public PlayerViewModel()
+        public PlayerViewModel(NavigationStore navigationStore)
         {
             NoteCommand = new NoteCommand(this);
+            RechercherCommand = new RechercherCommand(navigationStore);
         }
 
     }

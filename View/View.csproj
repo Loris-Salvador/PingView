@@ -110,6 +110,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{27aa8714-ca50-45bb-b8c1-db4d020b9237}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModel\ViewModel.csproj">
       <Project>{3374DD33-EFB7-4C29-9051-645FCEAA5ADE}</Project>
       <Name>ViewModel</Name>

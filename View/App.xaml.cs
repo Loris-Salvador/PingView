@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using ViewModel;
+using ViewModel.Navigation;
 
 namespace View
 {
@@ -14,11 +15,14 @@ namespace View
     /// </summary>
     public partial class App : Application
     {
+        private readonly NavigationStore _navigationStore = new NavigationStore();
         protected override void OnStartup(StartupEventArgs e)
         {
+            _navigationStore.CurrentViewModel = new PlayerViewModel(_navigationStore);
+
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(_navigationStore)
             };
             MainWindow.Show();
 
