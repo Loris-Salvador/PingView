@@ -10,12 +10,15 @@ using System.Windows.Input;
 using ViewModel.Command;
 using ViewModel.Navigation;
 using AccesDB;
+using ViewModel.Wrappers;
+using System.Collections.ObjectModel;
 
 namespace ViewModel
 {
     public class PlayerViewModel : ViewModelBase//
     {
         private readonly Joueur mainJoueur;
+        public ObservableCollection<WrapperNote> notes { get ; private set; }
 
         public string Club => mainJoueur.Club;
 
@@ -68,6 +71,8 @@ namespace ViewModel
         {
             mainJoueur = new Joueur();
             mainJoueur = AccesJoueur.getMainJoueur("150121");
+            notes = new ObservableCollection<WrapperNote>();
+            notes.Add(new WrapperNote(new Note()));
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
         }

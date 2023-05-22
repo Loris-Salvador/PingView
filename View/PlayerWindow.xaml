@@ -52,7 +52,7 @@
                 <RowDefinition Height ="3.5*"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Notes : " FontSize="18"  VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
-            <DataGrid AutoGenerateColumns="False" Grid.Row="1" Background="#3E4443" ItemsSource="{Binding notes, Mode=TwoWay}" Margin="10,10,10,10">
+            <DataGrid AutoGenerateColumns="False" Grid.Row="1" Background="#3E4443" ItemsSource="{Binding notes}" Margin="10,10,10,10" IsReadOnly="False">
                 <DataGrid.Resources>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="#3E4443" />
@@ -61,6 +61,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" Width="*"/>
                     <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Created}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
