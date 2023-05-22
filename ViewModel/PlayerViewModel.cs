@@ -11,7 +11,7 @@ using ViewModel.Navigation;
 
 namespace ViewModel
 {
-    public class PlayerViewModel : ViewModelBase
+    public class PlayerViewModel : ViewModelBase//
     {
         private int _spanJoueur = 1;
         public int SpanJoueur
