@@ -24,7 +24,11 @@ namespace View
             {
                 DataContext = new MainViewModel(_navigationStore)
             };
+
             MainWindow.Show();
+
+
+            Console.WriteLine(MainWindow.Top.ToString());
 
             base.OnStartup(e);
         }
@@ -32,7 +36,6 @@ namespace View
 
         protected override void OnExit(ExitEventArgs e)
         {
-            //REGISTRY
             base.OnExit(e);
         }
     }

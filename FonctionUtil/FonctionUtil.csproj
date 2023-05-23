@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3374DD33-EFB7-4C29-9051-645FCEAA5ADE}</ProjectGuid>
+    <ProjectGuid>{6482BB7B-F578-426B-AB0E-A7ED45E88099}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ViewModel</RootNamespace>
-    <AssemblyName>ViewModel</AssemblyName>
+    <RootNamespace>FonctionUtil</RootNamespace>
+    <AssemblyName>FonctionUtil</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,8 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,36 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\HomeCommand.cs" />
-    <Compile Include="Command\NoteCommand.cs" />
-    <Compile Include="Command\RechercherCommand.cs" />
-    <Compile Include="MainViewModel.cs" />
-    <Compile Include="Navigation\NavigationStore.cs" />
-    <Compile Include="PlayerViewModel.cs" />
+    <Compile Include="MyRegistryParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RechercherViewModel.cs" />
-    <Compile Include="Wrappers\WrapperNote.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AccesDB\AccesDB.csproj">
-      <Project>{c5424c36-b80e-4896-98a4-e365057967ef}</Project>
-      <Name>AccesDB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FonctionUtil\FonctionUtil.csproj">
-      <Project>{6482bb7b-f578-426b-ab0e-a7ed45e88099}</Project>
-      <Name>FonctionUtil</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{27aa8714-ca50-45bb-b8c1-db4d020b9237}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{0e1825ca-c0dc-40d1-a4af-0e1838cc505f}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
