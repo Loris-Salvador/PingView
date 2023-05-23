@@ -19,6 +19,19 @@ namespace ViewModel
     {
         private readonly MyData _data = MyData.getInstance();
 
+        private JoueurWrapper _mainJoueur;
+
+        public JoueurWrapper MainJoueur
+        {
+            get { return _mainJoueur; }
+            set
+            {
+                if (_mainJoueur == value) return;
+                _mainJoueur = value;
+                OnPropertyChanged();
+            }
+        }
+
         private ObservableCollection<WrapperNote> _notes = new ObservableCollection<WrapperNote>();
 
         public ObservableCollection<WrapperNote> notes
@@ -26,8 +39,6 @@ namespace ViewModel
             get { return _notes; }
             set { _notes =  value; }    
         }
-
-        public string Club => _data.MainJoueur.Club;
 
         private int _spanJoueur = 1;
         public int SpanJoueur
@@ -83,6 +94,7 @@ namespace ViewModel
             }
         }
 
+
         public ICommand NoteCommand { get; }
         public ICommand RechercherCommand { get; }
         public ICommand CalculateurCommand { get; }
@@ -91,10 +103,12 @@ namespace ViewModel
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
+            MainJoueur = new JoueurWrapper(new Joueur());
             AjouterNoteCommand = new AjouterNoteCommand(this);
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
             SupprimerNoteCommand = new SupprimerNoteCommand(this);
+            Console.WriteLine(_mainJoueur.Club);
         }
 
         public override void Dispose()

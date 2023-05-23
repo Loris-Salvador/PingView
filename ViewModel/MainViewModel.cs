@@ -1,6 +1,7 @@
 ﻿using Infrastructure;
 using ViewModel.Navigation;
 using FonctionUtil;
+using System;
 
 namespace ViewModel
 {
@@ -46,5 +47,7 @@ namespace ViewModel
         {
             OnPropertyChanged(nameof(CurrentViewModel));
         }
+
+
     }
 }

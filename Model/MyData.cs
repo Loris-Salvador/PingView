@@ -14,15 +14,6 @@ namespace Model
 
         private string _index;
 
-        private Joueur _MainJoueur = new Joueur();
-
-        public Joueur MainJoueur
-        {
-            get { return _MainJoueur; }
-            set { _MainJoueur = value; }
-        }
-
-
         public string Index
         {
             get { return _index; }

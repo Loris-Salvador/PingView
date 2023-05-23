@@ -118,7 +118,7 @@
                 <!--ATTENTION NORMALEMENT LOGO ICI-->
 
                 <TextBlock x:Name="NomPrenom" Text="Salvador Loris" Foreground="Silver" TextAlignment="Center" FontSize="30" Grid.Row="0" Grid.Column="1" />
-                <TextBlock x:Name="Club" Text="{Binding Club}" Foreground="Silver" FontSize="30" Grid.Column="1" TextAlignment="Center" Grid.Row="1"/>
+                <TextBlock x:Name="Club" Text="{Binding MainJoueur.Club}" Foreground="Silver" FontSize="30" Grid.Column="1" TextAlignment="Center" Grid.Row="1"/>
 
                 <!--Milieu de la colonne 1-->
 
