@@ -28,7 +28,6 @@ namespace AccesDB
 
             GetMembersResponse response = client.GetMembers(requestJoueur);
 
-
             Joueur joueur = new Joueur();
 
             joueur.Nom = response.MemberEntries[0].LastName;
@@ -40,14 +39,7 @@ namespace AccesDB
             joueur.Points = int.Parse(response.MemberEntries[0].RankingPointsEntries[1].Value);
             joueur.Position = int.Parse(response.MemberEntries[0].RankingPointsEntries[2].Value);
 
-
             return joueur;
-
-        }
-
-        public static int test()
-        {
-            return 3;
         }
 
     }

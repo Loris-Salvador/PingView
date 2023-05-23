@@ -103,16 +103,32 @@ namespace ViewModel
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
+
+            _data.Load("FichierTest.json");
+
+            foreach (Note note in _data.Notes)
+            {
+                WrapperNote n = new WrapperNote(new Note());
+                n.Nom = note.Nom;
+                n.Description = note.Description;
+                n.Created = note.Created;
+                notes.Add(n);
+            }
+
+            _data.Notes.Clear();
+
+
             MainJoueur = new JoueurWrapper(new Joueur());
             AjouterNoteCommand = new AjouterNoteCommand(this);
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
             SupprimerNoteCommand = new SupprimerNoteCommand(this);
-            Console.WriteLine(_mainJoueur.Club);
         }
 
         public override void Dispose()
         {
+
+
             foreach (WrapperNote wrapperNote in _notes)
             {
                 Note n = new Note();
@@ -121,6 +137,9 @@ namespace ViewModel
                 n.Created = wrapperNote.Created;
                 _data.Notes.Add(n);
             }
+            _data.Index = "150121";
+            _data.Save("FichierTest.json");
+
             base.Dispose();
         }
 

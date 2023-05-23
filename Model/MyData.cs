@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace Model
 {
@@ -33,13 +36,33 @@ namespace Model
         }
 
 
-        public void Load()
+        public void Load(string filename)
         {
-            Console.WriteLine("Load");
+            string jsonData = File.ReadAllText(filename);
+            MyData loadedData = JsonConvert.DeserializeObject<MyData>(jsonData);
+
+            if (loadedData != null)
+            {
+                Index = loadedData.Index;
+                Notes.Clear();
+                foreach (Note note in loadedData.Notes)
+                {
+                    Notes.Add(note);
+                }
+            }
         }
 
-        public void Save()
+        public void Save(string filename)
         {
+            MyData dataToSave = new MyData
+            {
+                Index = Index,
+                Notes = new ObservableCollection<Note>(Notes)
+            };
+
+            string jsonData = JsonConvert.SerializeObject(dataToSave);
+            File.WriteAllText(filename, jsonData);
+
 
         }
 

@@ -178,11 +178,7 @@
 
                     <Rectangle Grid.Column="1" Fill="Red"/>
                     <TextBlock Text="50%" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
-
                 </Grid>
-
-
             </Grid>
 
 
