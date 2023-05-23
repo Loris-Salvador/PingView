@@ -10,7 +10,7 @@ namespace ViewModel.Wrappers
 {
     public class WrapperNote : WrapperBase
     {
-        private readonly Note _note;
+        private Note _note => (Note)Content;
 
         public string Nom
         {
@@ -19,6 +19,7 @@ namespace ViewModel.Wrappers
             {
                 if (value == _note.Nom)
                     return;
+                _note.Nom = value;
                 OnPropertyChanged();
             }
         }
@@ -30,6 +31,7 @@ namespace ViewModel.Wrappers
             {
                 if (value == _note.Description)
                     return;
+                _note.Description = value;
                 OnPropertyChanged();
             }
         }
@@ -47,7 +49,6 @@ namespace ViewModel.Wrappers
 
         public WrapperNote(object content) : base(content)
         {
-            _note = (Note)content;
         }
     }
 }

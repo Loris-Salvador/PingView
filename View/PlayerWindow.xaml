@@ -52,8 +52,11 @@
                 <RowDefinition Height ="3.5*"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Notes : " FontSize="18"  VerticalAlignment="Center" Foreground="Silver" Margin="10" HorizontalAlignment="Left"/>
-            <Button Content="Ajouter Note" FontSize="10" Command="{Binding AjouterNoteCommand}"  VerticalAlignment="Center" Foreground="Silver" Margin="10" HorizontalAlignment="Right"/>
-            <DataGrid Grid.Row="1" Background="#3E4443" ItemsSource="{Binding notes, Mode=TwoWay}" Margin="10,10,10,10" AutoGenerateColumns="False" >
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button Content="Ajouter Note" Background="Transparent" FontSize="12" Command="{Binding AjouterNoteCommand}"  VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
+                <Button Content="Supprimer Note" Background="Transparent" FontSize="12" Command="{Binding SupprimerNoteCommand}"  VerticalAlignment="Center" Foreground="Silver" Margin="10" />
+            </StackPanel>
+            <DataGrid SelectedIndex="{Binding SelectedNote}" Grid.Row="1" Background="#3E4443" ItemsSource="{Binding notes, Mode=TwoWay}" Margin="10,10,10,10" AutoGenerateColumns="False" CanUserAddRows="True"  >
                 <DataGrid.Resources>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="#3E4443" />
@@ -62,7 +65,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Nom" Binding="{Binding Nom, Mode=TwoWay}" Width="*"/>
                     <DataGridTextColumn Header="Description" Binding="{Binding Description, Mode=TwoWay}" Width="2*"/>
-                    <DataGridTextColumn Header="Date" Binding="{Binding Created, Mode=TwoWay}" Width="*"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Created, Mode=TwoWay}" Width="0.65*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

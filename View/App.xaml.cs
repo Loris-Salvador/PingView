@@ -31,12 +31,19 @@ namespace View
             Console.WriteLine(MainWindow.Top.ToString());
 
             base.OnStartup(e);
+
+            Application.Current.Exit += Application_Exit;
         }
 
 
         protected override void OnExit(ExitEventArgs e)
         {
             base.OnExit(e);
+        }
+
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            _navigationStore.CurrentViewModel.Dispose();
         }
     }
 }

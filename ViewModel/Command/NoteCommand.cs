@@ -18,6 +18,8 @@ namespace ViewModel.Command
         }
         public override void Execute(object parameter)
         {
+          
+
             Console.WriteLine("Note Pressed");
             if (_playerViewModel.SpanJoueur == 1)
                 _playerViewModel.SpanJoueur = 3;

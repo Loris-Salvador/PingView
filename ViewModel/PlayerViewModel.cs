@@ -26,6 +26,7 @@ namespace ViewModel
             get { return _notes; }
             set { _notes =  value; }    
         }
+
         public string Club => _data.MainJoueur.Club;
 
         private int _spanJoueur = 1;
@@ -68,16 +69,45 @@ namespace ViewModel
                 OnPropertyChanged();
             }
         }
+
+        private int _selectedNote;
+
+        public int SelectedNote
+        {
+            get { return _selectedNote; }
+            set
+            {
+                if (value == _selectedNote) return;
+                _selectedNote = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand NoteCommand { get; }
         public ICommand RechercherCommand { get; }
         public ICommand CalculateurCommand { get; }
         public ICommand AjouterNoteCommand { get; }
+        public ICommand SupprimerNoteCommand { get; }
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
             AjouterNoteCommand = new AjouterNoteCommand(this);
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
+            SupprimerNoteCommand = new SupprimerNoteCommand(this);
+        }
+
+        public override void Dispose()
+        {
+            foreach (WrapperNote wrapperNote in _notes)
+            {
+                Note n = new Note();
+                n.Nom = wrapperNote.Nom;
+                n.Description = wrapperNote.Description;
+                n.Created = wrapperNote.Created;
+                _data.Notes.Add(n);
+            }
+            base.Dispose();
         }
 
     }

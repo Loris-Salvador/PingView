@@ -47,6 +47,7 @@
     <Compile Include="Command\HomeCommand.cs" />
     <Compile Include="Command\NoteCommand.cs" />
     <Compile Include="Command\RechercherCommand.cs" />
+    <Compile Include="Command\SupprimerNoteCommand.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Navigation\NavigationStore.cs" />
     <Compile Include="ParametreViewModel.cs" />

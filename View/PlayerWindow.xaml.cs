@@ -28,10 +28,7 @@ namespace View
 
         private void Parametre_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Parametre clicked");
             ParametreWindow window2 = new ParametreWindow();
-            // Afficher la deuxième fenêtre
-            //window2.OptionChanged += window2_OptionChanged;
             window2.ShowDialog();
         }
     }
