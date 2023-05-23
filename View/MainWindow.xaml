@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:View"
         xmlns:vms="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d"
-        Title="Ping View" Height="450" Width="800"
+        Title="Ping View" Height="480" Width="900" MinHeight="450" MinWidth="900"
         Left="{Binding PositionX, Mode=TwoWay}" Top="{Binding PositionY, Mode=TwoWay}">
     <Grid>
         <Grid.Resources>

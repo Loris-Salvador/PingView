@@ -55,13 +55,12 @@
             <Button Background="Transparent" Command="{Binding HomeCommand}" BorderBrush="Transparent" DockPanel.Dock="Bottom"  HorizontalAlignment="Right">
                 <Image Source="C:\Users\loris\Desktop\HEPL\C#\labo-final-LorisSal\PingView\Images/home.png" Width="30" Height="30"/>
             </Button>
-            <StackPanel>
             <Grid x:Name="Colonne1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height ="0.7*"/>
-                    <RowDefinition Height ="0.7*"/>
-                    <RowDefinition Height ="0.6*"/>
-                    <RowDefinition Height ="0.6*"/>
+                    <RowDefinition Height ="1*"/>
+                    <RowDefinition Height ="1*"/>
+                    <RowDefinition Height ="0.8*"/>
+                    <RowDefinition Height ="0.8*"/>
                     <RowDefinition Height ="3.5*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -141,8 +140,7 @@
 
 
             </Grid>
-        </StackPanel>
-            
+
         </DockPanel>
 
     </Grid>

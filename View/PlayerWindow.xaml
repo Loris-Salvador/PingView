@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" >
     
     
     <UserControl.Resources>
@@ -93,10 +93,10 @@
 
             <Grid x:Name="Colonne1" Grid.ColumnSpan="{Binding SpanJoueur}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height ="0.7*"/>
-                    <RowDefinition Height ="0.7*"/>
-                    <RowDefinition Height ="0.6*"/>
-                    <RowDefinition Height ="0.6*"/>
+                    <RowDefinition Height ="1*"/>
+                    <RowDefinition Height ="1*"/>
+                    <RowDefinition Height ="0.8*"/>
+                    <RowDefinition Height ="0.8*"/>
                     <RowDefinition Height ="3.5*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
