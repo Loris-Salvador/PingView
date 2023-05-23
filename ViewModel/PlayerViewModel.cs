@@ -10,17 +10,14 @@ using System.Windows.Input;
 using ViewModel.Command;
 using ViewModel.Navigation;
 using AccesDB;
-using ViewModel.Wrappers;
 using System.Collections.ObjectModel;
 
 namespace ViewModel
 {
-    public class PlayerViewModel : ViewModelBase//
+    public class PlayerViewModel : ViewModelBase
     {
-        private readonly Joueur mainJoueur;
-        public ObservableCollection<WrapperNote> notes { get ; private set; }
-
-        public string Club => mainJoueur.Club;
+        private readonly MyData _data = MyData.getInstance();
+        public string Club => _data.MainJoueur.Club;
 
         private int _spanJoueur = 1;
         public int SpanJoueur
@@ -68,10 +65,6 @@ namespace ViewModel
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
-            mainJoueur = new Joueur();
-            mainJoueur = AccesJoueur.getMainJoueur("150121");
-            notes = new ObservableCollection<WrapperNote>();
-            notes.Add(new WrapperNote(new Note()));
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
         }
