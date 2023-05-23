@@ -9,7 +9,8 @@ namespace Model
 {
     public class MyData
     {
-        public ObservableCollection<Note> Notes { get; set; }
+
+        public ObservableCollection<Note> Notes;
 
         private string _index;
 
@@ -30,7 +31,7 @@ namespace Model
 
         private MyData()
         {
-
+            Notes = new ObservableCollection<Note>();
         }
 
         private static MyData Instance = new MyData();
@@ -40,6 +41,16 @@ namespace Model
             return Instance;
         }
 
+
+        public void Load()
+        {
+            Console.WriteLine("Load");
+        }
+
+        public void Save()
+        {
+
+        }
 
     }
 }

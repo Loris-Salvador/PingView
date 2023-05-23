@@ -34,8 +34,10 @@ namespace Model
 
         public Note()
         {
-            _nom = "pas de nom";
-            _description = "pas de description";
+            _nom = "";
+            _description = "";
+            _created = DateTime.Now.Date;
+
         }
 
     }

@@ -51,17 +51,18 @@
                 <RowDefinition Height ="0.6*"/>
                 <RowDefinition Height ="3.5*"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Notes : " FontSize="18"  VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
-            <DataGrid AutoGenerateColumns="False" Grid.Row="1" Background="#3E4443" ItemsSource="{Binding notes}" Margin="10,10,10,10" IsReadOnly="False">
+            <TextBlock Text="Notes : " FontSize="18"  VerticalAlignment="Center" Foreground="Silver" Margin="10" HorizontalAlignment="Left"/>
+            <Button Content="Ajouter Note" FontSize="10" Command="{Binding AjouterNoteCommand}"  VerticalAlignment="Center" Foreground="Silver" Margin="10" HorizontalAlignment="Right"/>
+            <DataGrid Grid.Row="1" Background="#3E4443" ItemsSource="{Binding notes, Mode=TwoWay}" Margin="10,10,10,10" AutoGenerateColumns="False" >
                 <DataGrid.Resources>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="#3E4443" />
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" Width="*"/>
-                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
-                    <DataGridTextColumn Header="Date" Binding="{Binding Created}" Width="*"/>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Nom, Mode=TwoWay}" Width="*"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description, Mode=TwoWay}" Width="2*"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Created, Mode=TwoWay}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -196,7 +197,7 @@
 
                 <TextBlock Text="Détails du match" VerticalAlignment="Center" FontSize="21"  TextAlignment="Center" Foreground="Silver" Grid.Row="2"/>
 
-                <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding Items}" Grid.Column="2" Grid.Row="1">
+                <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding items}" Grid.Column="2" Grid.Row="1">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>

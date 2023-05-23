@@ -11,12 +11,21 @@ using ViewModel.Command;
 using ViewModel.Navigation;
 using AccesDB;
 using System.Collections.ObjectModel;
+using ViewModel.Wrappers;
 
 namespace ViewModel
 {
     public class PlayerViewModel : ViewModelBase
     {
         private readonly MyData _data = MyData.getInstance();
+
+        private ObservableCollection<WrapperNote> _notes = new ObservableCollection<WrapperNote>();
+
+        public ObservableCollection<WrapperNote> notes
+        {
+            get { return _notes; }
+            set { _notes =  value; }    
+        }
         public string Club => _data.MainJoueur.Club;
 
         private int _spanJoueur = 1;
@@ -62,9 +71,11 @@ namespace ViewModel
         public ICommand NoteCommand { get; }
         public ICommand RechercherCommand { get; }
         public ICommand CalculateurCommand { get; }
+        public ICommand AjouterNoteCommand { get; }
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
+            AjouterNoteCommand = new AjouterNoteCommand(this);
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
         }
