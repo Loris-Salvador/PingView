@@ -64,7 +64,6 @@ namespace ViewModel
         }
         public ICommand NoteCommand { get; }
         public ICommand RechercherCommand { get; }
-        public ICommand ParametreCommand { get; }
         public ICommand CalculateurCommand { get; }
 
         public PlayerViewModel(NavigationStore navigationStore)

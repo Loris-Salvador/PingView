@@ -62,6 +62,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ParametreWindow.xaml.cs">
+      <DependentUpon>ParametreWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RechercherWindow.xaml.cs">
       <DependentUpon>RechercherWindow.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ParametreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PlayerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -48,6 +48,7 @@
     <Compile Include="Command\RechercherCommand.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Navigation\NavigationStore.cs" />
+    <Compile Include="ParametreViewModel.cs" />
     <Compile Include="PlayerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechercherViewModel.cs" />

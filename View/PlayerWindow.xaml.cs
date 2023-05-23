@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,15 @@ namespace View
         public PlayerWindow()
         {
             InitializeComponent();
+        }
+
+        private void Parametre_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Parametre clicked");
+            ParametreWindow window2 = new ParametreWindow();
+            // Afficher la deuxième fenêtre
+            //window2.OptionChanged += window2_OptionChanged;
+            window2.ShowDialog();
         }
     }
 }
