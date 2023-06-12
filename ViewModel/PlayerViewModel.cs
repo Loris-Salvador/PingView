@@ -119,6 +119,7 @@ namespace ViewModel
 
 
             MainJoueur = new JoueurWrapper(new Joueur());
+            MainJoueur.Club = "CTT Tiege";
             AjouterNoteCommand = new AjouterNoteCommand(this);
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);

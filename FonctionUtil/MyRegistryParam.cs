@@ -11,7 +11,6 @@ namespace FonctionUtil
     public static class MyRegistryParam
     {
         private static readonly string RegistryKeyPath = "SOFTWARE\\HEPL\\PingView";
-
         public static int PositionX
         {
             get => GetValueOrDefault();
