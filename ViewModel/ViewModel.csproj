@@ -55,7 +55,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechercherViewModel.cs" />
     <Compile Include="Wrappers\NoteWrapper.cs" />
-    <Compile Include="Wrappers\JoueurWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesDB\AccesDB.csproj">

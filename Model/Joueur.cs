@@ -80,6 +80,15 @@ namespace Model
             set { _pdp = value;}
         }
 
+/*        public string getFuturClassement()
+        {
+            if (_position <= 1200)
+            {
+                return "B6";
+            }
+            return "";
+        }*/
+
         public Joueur(string nom, string prenom, string club, int nbVictoires, int nbDefaites, string classement, int position, int points, string pdp)
         {
             Nom = nom;
@@ -101,7 +110,30 @@ namespace Model
 
         public override string ToString()
         {
-            return "Nom : " + Nom + "\n" + "Prenom : " + Prenom + "\n" + "Classement : " + Classement + "\n" + "Club : " + Club + "\n" + "Position : " + Position + "\n" + "Points : " + Points;
+            return "Nom : " + Nom + "\n" + "Prenom : " + Prenom + "\n" + "Classement : " + Classement + "\n" + "Club : " + Club + "\n" + "Position : " + Position + "\n" + "Points : " + Points + "\n" + "NbVictoires : " + NbVictoires + "\n" + "NbDefaites : " + NbDefaites;
         }
+
+        public string NomComplet => $"{char.ToUpper(Nom[0])}{Nom.Substring(1).ToLower()} {char.ToUpper(Prenom[0])}{Prenom.Substring(1).ToLower()}";
+
+        public string FuturClassement
+        {
+            get
+            {
+                if (_position <= 1200)
+                {
+                    return "B6";
+                }
+                return "";
+            }
+        }
+
+        public string Ratio
+        {
+            get
+            {
+                return NbVictoires + " V - " + NbDefaites + " D";
+            }
+        }
+            
     }
 }

@@ -19,16 +19,14 @@ namespace ViewModel
     {
         private readonly MyData _data = MyData.getInstance();
 
-        private JoueurWrapper _mainJoueur;
-
-        public JoueurWrapper MainJoueur
+        private Joueur _mainJoueur;
+        public Joueur MainJoueur
         {
             get { return _mainJoueur; }
             set
             {
                 if (_mainJoueur == value) return;
                 _mainJoueur = value;
-                OnPropertyChanged();
             }
         }
 
@@ -117,9 +115,8 @@ namespace ViewModel
 
             _data.Notes.Clear();
 
+            MainJoueur = GetJoueur.getJoueurWithIndex(_data.Index);
 
-            MainJoueur = new JoueurWrapper(new Joueur());
-            MainJoueur.Club = "CTT Tiege";
             AjouterNoteCommand = new AjouterNoteCommand(this);
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);

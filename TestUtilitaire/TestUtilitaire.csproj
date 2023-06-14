@@ -140,6 +140,10 @@
       <Project>{c5424c36-b80e-4896-98a4-e365057967ef}</Project>
       <Name>AccesDB</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FonctionUtil\FonctionUtil.csproj">
+      <Project>{6482bb7b-f578-426b-ab0e-a7ed45e88099}</Project>
+      <Name>FonctionUtil</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{0e1825ca-c0dc-40d1-a4af-0e1838cc505f}</Project>
       <Name>Model</Name>
