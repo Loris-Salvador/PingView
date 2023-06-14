@@ -52,10 +52,38 @@ namespace ViewModel
             }
         }
 
+        public int DimensionX
+        {
+            get => MyRegistryParam.DimensionX;
+            set
+            {
+                if (MyRegistryParam.DimensionX != value)
+                {
+                    MyRegistryParam.DimensionX = value;
+                    OnPropertyChanged(nameof(DimensionX));
+                }
+            }
+        }
+
+        public int DimensionY
+        {
+            get => MyRegistryParam.DimensionY;
+            set
+            {
+                if (MyRegistryParam.DimensionY != value)
+                {
+                    MyRegistryParam.DimensionY = value;
+                    OnPropertyChanged(nameof(DimensionY));
+                }
+            }
+        }
+
         public MainViewModel(NavigationStore navigationStore)
         {
             PositionX = MyRegistryParam.PositionX;
             PositionY = MyRegistryParam.PositionY;
+            DimensionX = MyRegistryParam.DimensionX;
+            DimensionY = MyRegistryParam.DimensionY;
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }

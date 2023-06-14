@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:View"
         xmlns:vms="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d"
-        Title="Ping View" Height="480" Width="900" MinHeight="450" MinWidth="900"
-        Left="{Binding PositionX, Mode=TwoWay}" Top="{Binding PositionY, Mode=TwoWay}">
+        Title="Ping View" MinHeight="450" MinWidth="900"
+        Left="{Binding PositionX, Mode=TwoWay}" Top="{Binding PositionY, Mode=TwoWay}" Width="{Binding DimensionX, Mode=TwoWay}" Height="{Binding DimensionY,Mode=TwoWay}">
     <Grid>
         <Grid.Resources>
             <DataTemplate DataType="{x:Type vms:PlayerViewModel}">
