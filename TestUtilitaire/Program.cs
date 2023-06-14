@@ -20,7 +20,9 @@ namespace TestUtilitaire
 
 
             Console.WriteLine(j);
-            Console.WriteLine("Futur Classement : "  + j.FuturClassement);
+            Console.WriteLine("Pourcentage Victoire : "  + j.PourcentageVictoire + "Pourcentage Defaite : " + j.PourcentageDefaite);
+
+
 
             Console.ReadKey();
         }

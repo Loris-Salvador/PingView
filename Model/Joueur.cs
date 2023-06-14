@@ -134,6 +134,44 @@ namespace Model
                 return NbVictoires + " V - " + NbDefaites + " D";
             }
         }
-            
+
+        public string PourcentageVictoireWidth
+        {
+            get
+            {
+                string ratio =  (double)NbVictoires / (double)(NbVictoires + NbDefaites) + "*";
+                return ratio.Replace(",", ".");
+            }
+        }
+
+        public string PourcentageDefaiteWidth
+        {
+            get
+            {
+                string ratio = (double)NbDefaites / (double)(NbVictoires + NbDefaites) + "*";
+                return ratio.Replace(",", ".");
+            }
+        }
+
+        public string PourcentageVictoire
+        {
+            get
+            {
+                double ratio = (double)NbVictoires / (double)(NbVictoires + NbDefaites) * 100;
+                int approximation = (int)Math.Round(ratio);
+                return approximation + "%";
+            }
+        }
+
+        public string PourcentageDefaite
+        {
+            get
+            {
+                double ratio = (double)NbDefaites / (double)(NbVictoires + NbDefaites) * 100;
+                int approximation = (int)Math.Round(ratio);
+                return approximation + "%";
+            }
+        }
+
     }
 }
