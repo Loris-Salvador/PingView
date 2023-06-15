@@ -22,7 +22,11 @@ namespace ViewModel
         public ObservableCollection<Joueur> ListeJoueur
         {
             get { return _listeJoueur; }
-            set { _listeJoueur = value; }
+            set
+            {
+                _listeJoueur = value;
+                OnPropertyChanged();
+            }
         }
 
 
@@ -39,7 +43,7 @@ namespace ViewModel
                 OnPropertyChanged();
                 if(_nom.Length > 4)
                 {
-                    RechercheNom();
+                    ListeJoueur = GetJoueur.getListJoueurWithNom(Nom);
                 }
             }
         }
@@ -70,11 +74,11 @@ namespace ViewModel
             }
         }
 
-        private void RechercheNom()
+/*        private void RechercheNom()
         {
             ListeJoueur = GetJoueur.getListJoueurWithNom(Nom);
             Console.WriteLine(ListeJoueur[0]);
-        }
+        }*/
 
 
         public ICommand HomeCommand { get; }

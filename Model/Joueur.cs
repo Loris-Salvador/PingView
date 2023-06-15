@@ -9,6 +9,14 @@ namespace Model
     public class Joueur
     {
         #region Declarations
+        private string _index;
+
+        public string Index
+        {
+            get { return _index; }
+            set { _index = value; }
+        }
+
         private string _nom;
 
         public string Nom
@@ -104,7 +112,7 @@ namespace Model
 
         public override string ToString()
         {
-            return Nom + " " + Prenom;
+            return Nom + " " + Prenom + " " + Classement;
             //return "Nom : " + Nom + "\n" + "Prenom : " + Prenom + "\n" + "Classement : " + Classement + "\n" + "Club : " + Club + "\n" + "Position : " + Position + "\n" + "Points : " + Points + "\n" + "NbVictoires : " + NbVictoires + "\n" + "NbDefaites : " + NbDefaites;
         }
 

@@ -1589,6 +1589,8 @@ namespace AccesDB.TabTAPI {
         
         /// <remarks/>
         D,
+
+        wo
     }
     
     /// <remarks/>
