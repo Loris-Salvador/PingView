@@ -99,6 +99,8 @@ namespace ViewModel
         public ICommand AjouterNoteCommand { get; }
         public ICommand SupprimerNoteCommand { get; }
 
+        public ICommand ParametreCommand { get; }
+
         public PlayerViewModel(NavigationStore navigationStore)
         {
 
@@ -115,12 +117,15 @@ namespace ViewModel
 
             _data.Notes.Clear();
 
+            _data.Index = "143759";
+
             MainJoueur = GetJoueur.getJoueurWithIndex(_data.Index);
 
             AjouterNoteCommand = new AjouterNoteCommand(this);
             NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
             SupprimerNoteCommand = new SupprimerNoteCommand(this);
+            ParametreCommand = new ParametreCommand(navigationStore);
         }
 
         public override void Dispose()
@@ -135,7 +140,7 @@ namespace ViewModel
                 n.Created = wrapperNote.Created;
                 _data.Notes.Add(n);
             }
-            _data.Index = "150121";
+
             _data.Save("FichierTest.json");
 
             base.Dispose();

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Annotation.cs" />
+    <Compile Include="IDialogService.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="CommandBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

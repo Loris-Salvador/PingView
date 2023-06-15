@@ -12,7 +12,6 @@ namespace ViewModel
     {
         public ParametreViewModel()
         {
-
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,7 +16,7 @@ namespace View
     /// </summary>
     public partial class App : Application
     {
-        private readonly NavigationStore _navigationStore = new NavigationStore();
+        private readonly NavigationStore _navigationStore = new NavigationStore(new DialogService());
         protected override void OnStartup(StartupEventArgs e)
         {
             _navigationStore.CurrentViewModel = new PlayerViewModel(_navigationStore);

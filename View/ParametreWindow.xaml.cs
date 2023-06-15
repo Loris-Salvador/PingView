@@ -23,7 +23,6 @@ namespace View
         public ParametreWindow()
         {
             InitializeComponent();
-            DataContext = new ParametreViewModel();
         }
     }
 }

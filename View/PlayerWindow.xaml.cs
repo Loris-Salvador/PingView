@@ -26,10 +26,10 @@ namespace View
             InitializeComponent();
         }
 
-        private void Parametre_Click(object sender, RoutedEventArgs e)
+/*        private void Parametre_Click(object sender, RoutedEventArgs e)
         {
             ParametreWindow window2 = new ParametreWindow();
             window2.ShowDialog();
-        }
+        }*/
     }
 }

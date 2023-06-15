@@ -80,14 +80,6 @@ namespace Model
             set { _pdp = value;}
         }
 
-/*        public string getFuturClassement()
-        {
-            if (_position <= 1200)
-            {
-                return "B6";
-            }
-            return "";
-        }*/
 
         public Joueur(string nom, string prenom, string club, int nbVictoires, int nbDefaites, string classement, int position, int points, string pdp)
         {
@@ -119,10 +111,31 @@ namespace Model
         {
             get
             {
-                if (_position <= 1200)
+                if(Points > 1575)
                 {
-                    return "B6";
+                    if (Position <= 75)
+                    {
+                        return "B0";
+                    }
+                    else if(Position <= 225)
+                    {
+                        return "B2";
+                    }
+                    else if(Position <= 500)
+                    {
+                        return "B4";
+                    }
+                    else if(Position <=1000)
+                    {
+                        return "B6";
+                    }
+                    else
+                    {
+                        return "C0";
+                    }
+
                 }
+
                 return "";
             }
         }
