@@ -1,12 +1,15 @@
 ﻿using AccesDB.TabTAPI;
 using Model;
 using System;
+using System.Numerics;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Collections.ObjectModel;
 
 namespace AccesDB
 {
@@ -44,7 +47,6 @@ namespace AccesDB
 
             }
 
-
             joueur.Nom = response.MemberEntries[0].LastName;
             joueur.Prenom = response.MemberEntries[0].FirstName;
             joueur.Club = GetClub.GetClubWithIndex(response.MemberEntries[0].Club);
@@ -56,5 +58,67 @@ namespace AccesDB
 
             return joueur;
         }
+
+        public static ObservableCollection<Joueur> getListJoueurWithNom(string nom)
+        {
+            TabTAPI_PortTypeClient client = new TabTAPI_PortTypeClient();
+            List<string> ListClub = GetClub.GetListeClubWithCategory("10");
+            ObservableCollection<Joueur> listeJoueur = new ObservableCollection<Joueur>();
+
+            string xmlRequest = "<GetMembersRequest xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <RankingPointsInformation xmlns=\"http://api.frenoy.net/TabTAPI\">1</RankingPointsInformation>\r\n  <NameSearch xmlns=\"http://api.frenoy.net/TabTAPI\">" + nom + "</NameSearch>\r\n  <WithResults xmlns=\"http://api.frenoy.net/TabTAPI\">1</WithResults>\r\n</GetMembersRequest>";
+
+            GetMembersRequest requestJoueur = new GetMembersRequest();
+
+
+            XmlSerializer serializer3 = new XmlSerializer(typeof(GetMembersRequest));
+            using (StringReader reader = new StringReader(xmlRequest))
+            {
+                requestJoueur = (GetMembersRequest)serializer3.Deserialize(reader);
+            }
+
+            requestJoueur.Season = "23";
+
+            for (int k = 0; k < ListClub.Count && ListClub[k].Length == 4; k++)
+            {
+                requestJoueur.Club = ListClub[k];
+
+
+                GetMembersResponse response = client.GetMembers(requestJoueur);
+
+                for (int j = 0; j < int.Parse(response.MemberCount); j++)
+                {
+                    Joueur joueur = new Joueur();
+
+                    int victoires = 0;
+                    int defaites = 0;
+
+                    for (int i = 0; i < int.Parse(response.MemberEntries[j].ResultCount); i++)
+                    {
+                        if (response.MemberEntries[j].ResultEntries[i].Result == ResultType.V)
+                            victoires++;
+                        else
+                            defaites++;
+
+                    }
+
+                    joueur.Nom = response.MemberEntries[j].LastName;
+                    joueur.Prenom = response.MemberEntries[j].FirstName;
+                    joueur.Club = GetClub.GetClubWithIndex(response.MemberEntries[j].Club);
+                    joueur.Classement = response.MemberEntries[j].Ranking;
+                    joueur.NbVictoires = victoires;
+                    joueur.NbDefaites = defaites;
+                    joueur.Points = int.Parse(response.MemberEntries[j].RankingPointsEntries[1].Value);
+                    joueur.Position = int.Parse(response.MemberEntries[j].RankingPointsEntries[2].Value);
+
+                    listeJoueur.Add(joueur);
+                }
+            }
+
+
+            return listeJoueur;
+
+        }
+
     }
 }
+

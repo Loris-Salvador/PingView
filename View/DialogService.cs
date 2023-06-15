@@ -11,14 +11,15 @@ namespace View
 {
     public class DialogService : IDialogService
     {
+        private ParametreWindow _window;
         public void ShowDialog()
         {
-            var dialog = new ParametreWindow()
+            _window = new ParametreWindow()
             {
                 DataContext = new ParametreViewModel()
             };
 
-            dialog.ShowDialog();
+            _window.ShowDialog();
         }
     }
 }

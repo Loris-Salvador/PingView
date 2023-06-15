@@ -98,7 +98,6 @@ namespace ViewModel
         public ICommand CalculateurCommand { get; }
         public ICommand AjouterNoteCommand { get; }
         public ICommand SupprimerNoteCommand { get; }
-
         public ICommand ParametreCommand { get; }
 
         public PlayerViewModel(NavigationStore navigationStore)
@@ -117,7 +116,7 @@ namespace ViewModel
 
             _data.Notes.Clear();
 
-            _data.Index = "143759";
+            //_data.Index = "150121";
 
             MainJoueur = GetJoueur.getJoueurWithIndex(_data.Index);
 

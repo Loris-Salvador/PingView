@@ -30,18 +30,18 @@
         <TextBlock Text="Rechercher :" FontSize="18"  VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,0,0,0">
             <TextBlock Text="Nom :" VerticalAlignment="Center" FontSize="14" Foreground="Silver"/>
-            <TextBox Text="Salavdor" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="Silver" Background="Transparent" BorderBrush="Transparent"/>
+            <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="#000000" MinWidth="50" Background="#E5E5E5" BorderBrush="Transparent"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0,0,0">
-            <TextBlock Text="Prenom :" VerticalAlignment="Center" FontSize="14" Foreground="Silver"/>
-            <TextBox Text="Loris" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="Silver" FontSize="14" Background="Transparent" BorderBrush="Transparent"/>
+            <TextBlock Text="Club :" VerticalAlignment="Center" FontSize="14" Foreground="Silver"/>
+            <TextBox Text="{Binding Club, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#000000" FontSize="14" MinWidth="50" Background="#E5E5E5" BorderBrush="Transparent"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,0,0,0">
             <TextBlock Text="Classement :" VerticalAlignment="Center" FontSize="14" Foreground="Silver"/>
-            <TextBox Text="B6" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="Silver" Background="Transparent" BorderBrush="Transparent"/>
+            <TextBox Text="" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="#000000" Background="#E5E5E5" MinWidth="50" BorderBrush="Transparent"/>
         </StackPanel>
 
-        <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding Items}" Grid.Column="0" Grid.Row="5" Margin="10">
+        <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding ListeJoueur, Mode=TwoWay}" Grid.Column="0" Grid.Row="5" Margin="10">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>

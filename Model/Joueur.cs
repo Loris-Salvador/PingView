@@ -8,6 +8,7 @@ namespace Model
 {
     public class Joueur
     {
+        #region Declarations
         private string _nom;
 
         public string Nom
@@ -80,6 +81,7 @@ namespace Model
             set { _pdp = value;}
         }
 
+        #endregion
 
         public Joueur(string nom, string prenom, string club, int nbVictoires, int nbDefaites, string classement, int position, int points, string pdp)
         {
@@ -102,7 +104,8 @@ namespace Model
 
         public override string ToString()
         {
-            return "Nom : " + Nom + "\n" + "Prenom : " + Prenom + "\n" + "Classement : " + Classement + "\n" + "Club : " + Club + "\n" + "Position : " + Position + "\n" + "Points : " + Points + "\n" + "NbVictoires : " + NbVictoires + "\n" + "NbDefaites : " + NbDefaites;
+            return Nom + " " + Prenom;
+            //return "Nom : " + Nom + "\n" + "Prenom : " + Prenom + "\n" + "Classement : " + Classement + "\n" + "Club : " + Club + "\n" + "Position : " + Position + "\n" + "Points : " + Points + "\n" + "NbVictoires : " + NbVictoires + "\n" + "NbDefaites : " + NbDefaites;
         }
 
         public string NomComplet => $"{char.ToUpper(Nom[0])}{Nom.Substring(1).ToLower()} {char.ToUpper(Prenom[0])}{Prenom.Substring(1).ToLower()}";
@@ -133,9 +136,7 @@ namespace Model
                     {
                         return "C0";
                     }
-
                 }
-
                 return "";
             }
         }

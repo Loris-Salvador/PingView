@@ -10,23 +10,6 @@ namespace ViewModel
         private readonly NavigationStore _navigationStore;
         public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
-        //private int _width = 800;
-
-        //public int Width
-        //{
-        //    get { return _width; }
-        //    set
-        //    {
-        //        if (value == _width) return;
-        //        if (value < 600)
-        //        {
-        //            _navigationStore.CurrentViewModel.ChangeWindow();
-        //        }
-        //        _width = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-
         public int PositionX
         {
             get => MyRegistryParam.PositionX;

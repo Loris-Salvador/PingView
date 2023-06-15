@@ -10,4 +10,5 @@ namespace Infrastructure
     {
         void ShowDialog();
     }
+
 }

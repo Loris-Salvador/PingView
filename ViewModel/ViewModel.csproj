@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\AjouterNoteCommand.cs" />
+    <Compile Include="Command\AppliquerCommand.cs" />
     <Compile Include="Command\HomeCommand.cs" />
     <Compile Include="Command\NoteCommand.cs" />
     <Compile Include="Command\ParametreCommand.cs" />

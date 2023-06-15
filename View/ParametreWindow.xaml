@@ -16,11 +16,14 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left">
             <TextBlock Text="Path Registry" Margin="0,0,10,0"/> 
-            <TextBox MinWidth="30"/>
+            <TextBox MinWidth="60"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left">
             <TextBlock Text="Index Joueur Principal" Margin="0,0,10,0"/>
-            <TextBox MinWidth="30"/>
+            <TextBox MinWidth="60" Text="{Binding NewIndex}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,30,0" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <Button Content="Appliquer" Command="{Binding AppliquerCommand}"/>
         </StackPanel>
     </Grid>
 </Window>
