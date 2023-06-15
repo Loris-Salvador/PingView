@@ -41,7 +41,7 @@
             <TextBox Text="" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="#000000" Background="#E5E5E5" MinWidth="50" BorderBrush="Transparent"/>
         </StackPanel>
 
-        <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding ListeJoueur, Mode=TwoWay}" Grid.Column="0" Grid.Row="5" Margin="10">
+        <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding ListeJoueur, Mode=TwoWay}" SelectedValue="{Binding JoueurSelectionne}" Grid.Column="0" Grid.Row="5" Margin="10">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -72,8 +72,8 @@
 
                 <!--Haut de la colonne 1-->
 
-                <TextBlock x:Name="NomPrenom" Text="Salvador Loris" Foreground="Silver" TextAlignment="Center" FontSize="30" Grid.Row="0" Grid.Column="1" />
-                <TextBlock x:Name="Club" Text="CTT Tiege" Foreground="Silver" FontSize="30" Grid.Column="1" TextAlignment="Center" Grid.Row="1"/>
+                <TextBlock x:Name="NomPrenom" Text="{Binding JoueurSelectionne.NomComplet}" Foreground="Silver" TextAlignment="Center" FontSize="30" Grid.Row="0" Grid.Column="1" />
+                <TextBlock x:Name="Club" Text="{Binding JoueurSelectionne.Club}" Foreground="Silver" FontSize="30" Grid.Column="1" TextAlignment="Center" Grid.Row="1"/>
 
                 <!--Milieu de la colonne 1-->
 
@@ -85,12 +85,12 @@
 
                     <StackPanel Orientation="Horizontal" Grid.Column="0">
                         <TextBlock Text="Classement :" FontSize="18" Margin="10" VerticalAlignment="Center" Foreground="Silver"/>
-                        <TextBlock Text="C0" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
+                        <TextBlock Text="{Binding JoueurSelectionne.Classement}" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="1">
                         <TextBlock Text="Futur classement :" FontSize="18" Margin="10"  VerticalAlignment="Center" Foreground="Silver"/>
-                        <TextBlock Text="B6" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
+                        <TextBlock Text="{Binding JoueurSelectionne.FuturClassement}" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
                     </StackPanel>
 
                 </Grid>
@@ -104,12 +104,12 @@
 
                     <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,256,0">
                         <TextBlock Text="Points :" FontSize="18" VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
-                        <TextBlock Text="1715" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
+                        <TextBlock Text="{Binding JoueurSelectionne.Points}" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="2">
                         <TextBlock Text="Position :" FontSize="18" VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
-                        <TextBlock Text="885" FontSize="18"  VerticalAlignment="Center"  Background="Transparent" Foreground="Silver"/>
+                        <TextBlock Text="{Binding JoueurSelectionne.Position}" FontSize="18"  VerticalAlignment="Center"  Background="Transparent" Foreground="Silver"/>
                     </StackPanel>
                 </Grid>
 
@@ -119,7 +119,7 @@
 
                 <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Margin="0">
                     <TextBlock Text="Ratio Victoire" Foreground="Silver" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="18" Margin="5" />
-                    <TextBlock Text="60 V - 60 D" Foreground="Silver" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="14" />
+                    <TextBlock Text="{Binding JoueurSelectionne.Ratio}" Foreground="Silver" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="14" />
                 </StackPanel>
 
                 <Grid Grid.Column="2" Grid.Row="1" Height="30" VerticalAlignment="Center">
@@ -130,10 +130,10 @@
 
 
                     <Rectangle Grid.Column="0" Fill="Blue"/>
-                    <TextBlock Text="50%" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding JoueurSelectionne.PourcentageVictoire}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     <Rectangle Grid.Column="1" Fill="Red"/>
-                    <TextBlock Text="50%" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding JoueurSelectionne.PourcentageDefaite}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
 
                 </Grid>

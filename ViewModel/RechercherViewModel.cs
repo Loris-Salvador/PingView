@@ -16,6 +16,18 @@ namespace ViewModel
 {
     public class RechercherViewModel : ViewModelBase
     {
+        private Joueur _joueurSelectionne;
+
+        public Joueur JoueurSelectionne
+        {
+            get { return _joueurSelectionne; }
+            set
+            {
+                _joueurSelectionne = value;
+                _joueurSelectionne = GetJoueur.getJoueurWithIndex(_joueurSelectionne.Index);
+                OnPropertyChanged();
+            }
+        }
 
         private ObservableCollection<Joueur> _listeJoueur = new ObservableCollection<Joueur>();
 
