@@ -51,7 +51,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="GetClub.cs" />
+    <Compile Include="GetDivision.cs" />
     <Compile Include="GetJoueur.cs" />
+    <Compile Include="GetRencontre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

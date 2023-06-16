@@ -17,7 +17,6 @@ namespace ViewModel
     public class RechercherViewModel : ViewModelBase
     {
         private Joueur _joueurSelectionne;
-
         public Joueur JoueurSelectionne
         {
             get { return _joueurSelectionne; }

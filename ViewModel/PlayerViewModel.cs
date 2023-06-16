@@ -38,6 +38,14 @@ namespace ViewModel
             set { _notes =  value; }    
         }
 
+        private ObservableCollection<Rencontre> _rencontres = new ObservableCollection<Rencontre>();
+
+        public ObservableCollection<Rencontre> Rencontres
+        {
+            get { return _rencontres; }
+            set { _rencontres = value; }
+        }
+
         private int _spanJoueur = 1;
         public int SpanJoueur
         {
@@ -113,12 +121,18 @@ namespace ViewModel
                 n.Created = note.Created;
                 notes.Add(n);
             }
-
             _data.Notes.Clear();
 
-            //_data.Index = "150121";
 
             MainJoueur = GetJoueur.getJoueurWithIndex(_data.Index);
+
+
+            //Rencontres
+            _rencontres = new ObservableCollection<Rencontre>();
+            _rencontres = GetRencontre.GetRencontresJoueur(MainJoueur);
+
+            //
+
 
             AjouterNoteCommand = new AjouterNoteCommand(this);
             NoteCommand = new NoteCommand(this);

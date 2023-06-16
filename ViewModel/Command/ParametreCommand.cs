@@ -12,7 +12,6 @@ namespace ViewModel.Command
     {
         private NavigationStore _navigationStore;
         public ParametreCommand(NavigationStore navigationStore) { _navigationStore = navigationStore; }
-
         public override void Execute(object parameter)
         {
             _navigationStore.DialogService.ShowDialog();

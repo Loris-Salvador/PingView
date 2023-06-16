@@ -50,6 +50,7 @@ namespace AccesDB
             joueur.Nom = response.MemberEntries[0].LastName;
             joueur.Prenom = response.MemberEntries[0].FirstName;
             joueur.Club = GetClub.GetClubWithIndex(response.MemberEntries[0].Club);
+            joueur.ClubIndex = response.MemberEntries[0].Club;
             joueur.Classement = response.MemberEntries[0].Ranking;
             joueur.NbVictoires = victoires;
             joueur.NbDefaites = defaites;

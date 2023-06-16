@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using ViewModel;
+using Model;
 using ViewModel.Navigation;
 
 namespace View
@@ -28,7 +29,7 @@ namespace View
 
             MainWindow.Show();
 
-
+            
             Console.WriteLine(MainWindow.Top.ToString());
 
             base.OnStartup(e);

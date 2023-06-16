@@ -17,6 +17,14 @@ namespace Model
             set { _index = value; }
         }
 
+        private string _clubIndex;
+
+        public string ClubIndex
+        {
+            get { return _clubIndex; }
+            set { _clubIndex = value; }
+        }
+
         private string _nom;
 
         public string Nom

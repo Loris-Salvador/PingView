@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using AccesDB;
 using FonctionUtil;
+using TestUtilitaire.TabTAPI;
 
 namespace TestUtilitaire
 {
@@ -13,16 +14,34 @@ namespace TestUtilitaire
     {
         static void Main(string[] args)
         {
+            TabTAPI_PortTypeClient client = new TabTAPI_PortTypeClient();
 
-            Joueur j = new Joueur();
+            GetMatchesRequest request = new GetMatchesRequest();
 
-            j = GetJoueur.getJoueurWithIndex("150121");
+            request.Club = "L264";
+            request.Season = "23";
+            request.WeekName = "1";
+            //request.DivisionId = "6428";
+
+            List<Rencontre> rencontres = new List<Rencontre>();
+
+            GetMatchesResponse response = client.GetMatches(request);
+
+            for (int i = 0; i < int.Parse(response.MatchCount); i++)
+            {
+                Rencontre rencontre = new Rencontre();
 
 
-            Console.WriteLine(j);
-            Console.WriteLine("Pourcentage Victoire : "  + j.PourcentageVictoire + "Pourcentage Defaite : " + j.PourcentageDefaite);
+                rencontre.Score = response.TeamMatchesEntries[i].Score;
+                rencontre.EquipeDom = response.TeamMatchesEntries[i].HomeTeam;
+                rencontre.EquipeExt = response.TeamMatchesEntries[i].AwayTeam;
+                string division = response.TeamMatchesEntries[i].DivisionId;
 
 
+                rencontres.Add(rencontre);
+
+                Console.WriteLine(rencontre + "Division : " + division);
+            }
 
             Console.ReadKey();
         }
