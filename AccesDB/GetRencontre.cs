@@ -123,20 +123,14 @@ namespace AccesDB
             request.Season = "23";
             request.MatchUniqueId = r.UniqueMatchId;
 
-            Console.WriteLine(r.WeekNumber);
+            Console.WriteLine(r.UniqueMatchId);
 
             GetMatchesResponse response = new GetMatchesResponse();
 
-            try
-            {
-                response = client.GetMatches(request);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            response = client.GetMatches(request);
 
-            Console.WriteLine(response.TeamMatchesEntries[0].HomeClub);
+            //GERER les details LET's GOOOOOOOO
+
 
             return new Rencontre();
 

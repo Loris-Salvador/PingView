@@ -679,7 +679,7 @@ namespace AccesDB.TabTAPI {
         
         private string uniqueIndexField;
         
-        private System.DateTime registrationDateField;
+        private string registrationDateField;
         
         private MemberEntryType memberField;
         
@@ -699,7 +699,7 @@ namespace AccesDB.TabTAPI {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public System.DateTime RegistrationDate {
+        public string RegistrationDate {
             get {
                 return this.registrationDateField;
             }
@@ -773,7 +773,7 @@ namespace AccesDB.TabTAPI {
         
         private string categoryField;
         
-        private System.DateTime birthDateField;
+        private string birthDateField;
         
         private bool birthDateFieldSpecified;
         
@@ -932,8 +932,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=10)]
-        public System.DateTime BirthDate {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string", Order=10)]
+        public string BirthDate {
             get {
                 return this.birthDateField;
             }
@@ -1316,7 +1316,7 @@ namespace AccesDB.TabTAPI {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://api.frenoy.net/TabTAPI")]
     public partial class PlayerResultEntryType : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private System.DateTime dateField;
+        private string dateField;
         
         private string uniqueIndexField;
         
@@ -1353,8 +1353,8 @@ namespace AccesDB.TabTAPI {
         private string rankingEvaluationCategoryField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=0)]
-        public System.DateTime Date {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string", Order=0)]
+        public string Date {
             get {
                 return this.dateField;
             }
@@ -2341,13 +2341,13 @@ namespace AccesDB.TabTAPI {
         
         private string externalIndexField;
         
-        private System.DateTime dateFromField;
+        private string dateFromField;
         
-        private System.DateTime dateToField;
+        private string dateToField;
         
         private bool dateToFieldSpecified;
         
-        private System.DateTime registrationDateField;
+        private string registrationDateField;
         
         private bool registrationDateFieldSpecified;
         
@@ -2406,8 +2406,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=4)]
-        public System.DateTime DateFrom {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string", Order=4)]
+        public string DateFrom {
             get {
                 return this.dateFromField;
             }
@@ -2418,8 +2418,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=5)]
-        public System.DateTime DateTo {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string", Order=5)]
+        public string DateTo {
             get {
                 return this.dateToField;
             }
@@ -2442,8 +2442,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=6)]
-        public System.DateTime RegistrationDate {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string", Order=6)]
+        public string RegistrationDate {
             get {
                 return this.registrationDateField;
             }
@@ -2620,7 +2620,7 @@ namespace AccesDB.TabTAPI {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://api.frenoy.net/TabTAPI")]
     public partial class CommentEntryType : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private System.DateTime timestampField;
+        private string timestampField;
         
         private MemberEntryType authorField;
         
@@ -2630,7 +2630,7 @@ namespace AccesDB.TabTAPI {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public System.DateTime Timestamp {
+        public string Timestamp {
             get {
                 return this.timestampField;
             }
@@ -2844,11 +2844,11 @@ namespace AccesDB.TabTAPI {
         
         private bool detailsCreatedField;
         
-        private System.DateTime startTimeField;
+        private string startTimeField;
         
         private bool startTimeFieldSpecified;
         
-        private System.DateTime endTimeField;
+        private string endTimeField;
         
         private bool endTimeFieldSpecified;
         
@@ -2889,8 +2889,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="time", Order=1)]
-        public System.DateTime StartTime {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string", Order=1)]
+        public string StartTime {
             get {
                 return this.startTimeField;
             }
@@ -2913,8 +2913,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="time", Order=2)]
-        public System.DateTime EndTime {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string", Order=2)]
+        public string EndTime {
             get {
                 return this.endTimeField;
             }
@@ -3104,11 +3104,11 @@ namespace AccesDB.TabTAPI {
         
         private string weekNameField;
         
-        private System.DateTime dateField;
+        private string dateField;
         
         private bool dateFieldSpecified;
         
-        private System.DateTime timeField;
+        private string timeField;
         
         private bool timeFieldSpecified;
         
@@ -3194,8 +3194,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
-        public System.DateTime Date {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string")]
+        public string Date {
             get {
                 return this.dateField;
             }
@@ -3218,8 +3218,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="time")]
-        public System.DateTime Time {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string")]
+        public string Time {
             get {
                 return this.timeField;
             }
@@ -3886,7 +3886,7 @@ namespace AccesDB.TabTAPI {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://api.frenoy.net/TabTAPI")]
     public partial class TestResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private System.DateTime timestampField;
+        private string timestampField;
         
         private string apiVersionField;
         
@@ -3909,7 +3909,7 @@ namespace AccesDB.TabTAPI {
         private string dbVersionField;
         
         /// <remarks/>
-        public System.DateTime Timestamp {
+        public string Timestamp {
             get {
                 return this.timestampField;
             }
@@ -4549,11 +4549,11 @@ namespace AccesDB.TabTAPI {
         
         private bool showDivisionNameFieldSpecified;
         
-        private System.DateTime yearDateFromField;
+        private string yearDateFromField;
         
         private bool yearDateFromFieldSpecified;
         
-        private System.DateTime yearDateToField;
+        private string yearDateToField;
         
         private bool yearDateToFieldSpecified;
         
@@ -4681,8 +4681,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
-        public System.DateTime YearDateFrom {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string")]
+        public string YearDateFrom {
             get {
                 return this.yearDateFromField;
             }
@@ -4705,8 +4705,8 @@ namespace AccesDB.TabTAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
-        public System.DateTime YearDateTo {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="string")]
+        public string YearDateTo {
             get {
                 return this.yearDateToField;
             }
