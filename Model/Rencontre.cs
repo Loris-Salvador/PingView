@@ -16,6 +16,22 @@ namespace Model
             set { _equipeDom = value; }
         }
 
+        private string _uniqueMatchId;
+
+        public string UniqueMatchId
+        {
+            get { return this._uniqueMatchId; }
+            set { _uniqueMatchId = value; }
+        }
+
+        private int _weekNumber;
+
+        public int WeekNumber
+        {
+            get { return _weekNumber; }
+            set { _weekNumber = value; }
+        }
+
         private string _equipeExt;
 
         public string EquipeExt

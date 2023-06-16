@@ -38,7 +38,7 @@ namespace AccesDB
             for(int i = 0; i < _divisions.Count; i++)
             {
                 request.DivisionId = _divisions[i];
-                for(int j = 1; j <20; j++)
+                for(int j = 1; j <4; j++)
                 {
                     
                     request.WeekName = j.ToString();
@@ -50,18 +50,53 @@ namespace AccesDB
                     {
                         for (int k = 0; response.TeamMatchesEntries[0].IsValidated && !response.TeamMatchesEntries[0].IsAwayForfeited && !response.TeamMatchesEntries[0].IsHomeForfeited && k < int.Parse(response.TeamMatchesEntries[0].MatchDetails.HomePlayers.PlayerCount); k++)
                         {
-                            if (response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[k].UniqueIndex == "150121" || response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[k].UniqueIndex == "150121")
+                            try
                             {
-                                Rencontre rencontre = new Rencontre();
+                                if (!response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[k].IsForfeited && response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[k].UniqueIndex == "150121")
+                                {
+                                    Rencontre rencontre = new Rencontre();
 
 
-                                rencontre.Score = response.TeamMatchesEntries[0].Score;
-                                rencontre.EquipeDom = response.TeamMatchesEntries[0].HomeTeam;
-                                rencontre.EquipeExt = response.TeamMatchesEntries[0].AwayTeam;
+                                    rencontre.Score = response.TeamMatchesEntries[0].Score;
+                                    rencontre.EquipeDom = response.TeamMatchesEntries[0].HomeTeam;
+                                    rencontre.EquipeExt = response.TeamMatchesEntries[0].AwayTeam;
+                                    rencontre.WeekNumber = int.Parse(response.TeamMatchesEntries[0].WeekName);
+                                    rencontre.UniqueMatchId = response.TeamMatchesEntries[0].MatchUniqueId;
 
-                                rencontres.Add(rencontre);
+                                    rencontres.Add(rencontre);
 
-                                break;
+                                    break;
+                                }
+                            }
+                            catch(Exception e)
+                            {
+                                Console.WriteLine(e.Message);
+                            }
+                        }
+                        for (int k = 0; response.TeamMatchesEntries[0].IsValidated && !response.TeamMatchesEntries[0].IsAwayForfeited && !response.TeamMatchesEntries[0].IsHomeForfeited && k < int.Parse(response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.PlayerCount); k++)
+                        { 
+                            try
+                            {
+                                if (!response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[k].IsForfeited && response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[k].UniqueIndex == "150121")
+                                {
+                                    Rencontre rencontre = new Rencontre();
+
+
+                                    rencontre.Score = response.TeamMatchesEntries[0].Score;
+                                    rencontre.EquipeDom = response.TeamMatchesEntries[0].HomeTeam;
+                                    rencontre.EquipeExt = response.TeamMatchesEntries[0].AwayTeam;
+                                    rencontre.WeekNumber = int.Parse(response.TeamMatchesEntries[0].WeekName);
+                                    rencontre.UniqueMatchId = response.TeamMatchesEntries[0].MatchUniqueId;
+
+
+                                    rencontres.Add(rencontre);
+
+                                    break;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e.Message);
                             }
                         }
                     }
@@ -69,8 +104,42 @@ namespace AccesDB
             }
 
             return rencontres;
+        }
 
-            
+        public static Rencontre GetDetailsRencontre(Rencontre r)
+        {
+            TabTAPI_PortTypeClient client = new TabTAPI_PortTypeClient();
+
+            string xmlRequest = "<GetMatchesRequest xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <WithDetails xmlns=\"http://api.frenoy.net/TabTAPI\">1</WithDetails>\r\n</GetMatchesRequest>";
+
+            GetMatchesRequest request = new GetMatchesRequest();
+
+            XmlSerializer serializer3 = new XmlSerializer(typeof(GetMatchesRequest));
+            using (StringReader reader = new StringReader(xmlRequest))
+            {
+                request = (GetMatchesRequest)serializer3.Deserialize(reader);
+            }
+
+            request.Season = "23";
+            request.MatchUniqueId = r.UniqueMatchId;
+
+            Console.WriteLine(r.WeekNumber);
+
+            GetMatchesResponse response = new GetMatchesResponse();
+
+            try
+            {
+                response = client.GetMatches(request);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            Console.WriteLine(response.TeamMatchesEntries[0].HomeClub);
+
+            return new Rencontre();
+
         }
     }
 }

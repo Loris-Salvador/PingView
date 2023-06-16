@@ -19,6 +19,19 @@ namespace ViewModel
     {
         private readonly MyData _data = MyData.getInstance();
 
+        private Rencontre _rencontreSelectionne;
+
+        public Rencontre RencontreSelectionne
+        {
+            get { return _rencontreSelectionne; }
+            set
+            {
+                _rencontreSelectionne = value;
+                _rencontreSelectionne = GetRencontre.GetDetailsRencontre(_rencontreSelectionne);
+                OnPropertyChanged();
+            }
+        }
+
         private Joueur _mainJoueur;
         public Joueur MainJoueur
         {
@@ -127,11 +140,9 @@ namespace ViewModel
             MainJoueur = GetJoueur.getJoueurWithIndex(_data.Index);
 
 
-            //Rencontres
             _rencontres = new ObservableCollection<Rencontre>();
-            _rencontres = GetRencontre.GetRencontresJoueur(MainJoueur);
-
-            //
+            _rencontres = GetRencontre.GetRencontresJoueur(MainJoueur);//F
+            
 
 
             AjouterNoteCommand = new AjouterNoteCommand(this);

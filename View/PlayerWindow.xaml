@@ -196,7 +196,7 @@
 
                 <TextBlock Text="Détails du match" VerticalAlignment="Center" FontSize="21"  TextAlignment="Center" Foreground="Silver" Grid.Row="2"/>
 
-                <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding Rencontres}" Grid.Column="2" Grid.Row="1">
+                <ListView x:Name="matches" Background="#203735" SelectedItem="{Binding RencontreSelectionne}" ItemsSource="{Binding Rencontres}" Grid.Column="2" Grid.Row="1">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
