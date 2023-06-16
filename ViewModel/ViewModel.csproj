@@ -56,7 +56,6 @@
     <Compile Include="PlayerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechercherViewModel.cs" />
-    <Compile Include="Wrappers\JoueurWrapper.cs" />
     <Compile Include="Wrappers\NoteWrapper.cs" />
   </ItemGroup>
   <ItemGroup>

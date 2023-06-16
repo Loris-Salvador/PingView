@@ -6,6 +6,11 @@
              xmlns:local="clr-namespace:View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    
     <Grid>
         <!--BackGround-->
         <Grid.Background>
@@ -84,12 +89,12 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="0">
-                        <TextBlock Text="Classement :" FontSize="18" Margin="10" VerticalAlignment="Center" Foreground="Silver"/>
+                        <TextBlock Text="Classement :" FontSize="18" Margin="10" VerticalAlignment="Center" Foreground="Silver" Visibility="{Binding Visibility, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                         <TextBlock Text="{Binding JoueurSelectionne.Classement}" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="1">
-                        <TextBlock Text="Futur classement :" FontSize="18" Margin="10"  VerticalAlignment="Center" Foreground="Silver"/>
+                        <TextBlock Text="Futur classement :" Visibility="{Binding Visibility, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="18" Margin="10"  VerticalAlignment="Center" Foreground="Silver"/>
                         <TextBlock Text="{Binding JoueurSelectionne.FuturClassement}" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
                     </StackPanel>
 
@@ -103,12 +108,12 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,256,0">
-                        <TextBlock Text="Points :" FontSize="18" VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
+                        <TextBlock Text="Points :" Visibility="{Binding Visibility, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="18" VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
                         <TextBlock Text="{Binding JoueurSelectionne.Points}" FontSize="18"  VerticalAlignment="Center" Background="Transparent" Foreground="Silver"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="2">
-                        <TextBlock Text="Position :" FontSize="18" VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
+                        <TextBlock Text="Position :" Visibility="{Binding Visibility, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="18" VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
                         <TextBlock Text="{Binding JoueurSelectionne.Position}" FontSize="18"  VerticalAlignment="Center"  Background="Transparent" Foreground="Silver"/>
                     </StackPanel>
                 </Grid>
@@ -118,7 +123,7 @@
                 <!--Bas de la colonne 1-->
 
                 <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Margin="0">
-                    <TextBlock Text="Ratio Victoire" Foreground="Silver" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="18" Margin="5" />
+                    <TextBlock Text="Ratio Victoire" Visibility="{Binding Visibility, Converter={StaticResource BooleanToVisibilityConverter}}" Foreground="Silver" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="18" Margin="5" />
                     <TextBlock Text="{Binding JoueurSelectionne.Ratio}" Foreground="Silver" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="14" />
                 </StackPanel>
 
@@ -129,10 +134,10 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <Rectangle Grid.Column="0" Fill="Blue"/>
+                    <Rectangle Visibility="{Binding Visibility, Converter={StaticResource BooleanToVisibilityConverter}}" Grid.Column="0" Fill="Blue"/>
                     <TextBlock Text="{Binding JoueurSelectionne.PourcentageVictoire}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-                    <Rectangle Grid.Column="1" Fill="Red"/>
+                    <Rectangle Visibility="{Binding Visibility, Converter={StaticResource BooleanToVisibilityConverter}}" Grid.Column="1" Fill="Red"/>
                     <TextBlock Text="{Binding JoueurSelectionne.PourcentageDefaite}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
 

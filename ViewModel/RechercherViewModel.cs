@@ -25,6 +25,7 @@ namespace ViewModel
             {
                 _joueurSelectionne = value;
                 _joueurSelectionne = GetJoueur.getJoueurWithIndex(_joueurSelectionne.Index);
+                Visibility = true;
                 OnPropertyChanged();
             }
         }
@@ -86,11 +87,19 @@ namespace ViewModel
             }
         }
 
-/*        private void RechercheNom()
+        private bool _visiblibility = false;
+
+        public bool Visibility
         {
-            ListeJoueur = GetJoueur.getListJoueurWithNom(Nom);
-            Console.WriteLine(ListeJoueur[0]);
-        }*/
+            get { return _visiblibility; }
+
+            set
+            {
+                if (value == _visiblibility) return;
+                _visiblibility = value;
+                OnPropertyChanged();
+            }
+        }
 
 
         public ICommand HomeCommand { get; }

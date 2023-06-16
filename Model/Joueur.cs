@@ -122,7 +122,7 @@ namespace Model
         {
             get
             {
-                if(Points > 1575)
+                if(Points >= 1400)
                 {
                     if (Position <= 75)
                     {
@@ -145,7 +145,55 @@ namespace Model
                         return "C0";
                     }
                 }
-                return "";
+                else if(Points >= 1250)
+                {
+                    return "C2";
+                }
+                else if (Points >= 1100)
+                {
+                    return "C4";
+                }
+                else if (Points >= 950)
+                {
+                    return "C6";
+                }
+                else if (Points >= 825)
+                {
+                    return "D0";
+                }
+                else if (Points >= 700)
+                {
+                    return "D2";
+                }
+                else if (Points >= 575)
+                {
+                    return "D4";
+                }
+                else if (Points >= 450)
+                {
+                    return "D6";
+                }
+                else if (Points >= 350)
+                {
+                    return "E0";
+                }
+                else if (Points >= 250)
+                {
+                    return "E2";
+                }
+                else if (Points >= 175)
+                {
+                    return "E4";
+                }
+                else if (Points >= 125)
+                {
+                    return "E6";
+                }
+                else
+                {
+                    return "NC";
+                }
+
             }
         }
 
