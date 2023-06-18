@@ -83,6 +83,14 @@ namespace AccesDB
 
 
                                     rencontre.Score = response.TeamMatchesEntries[0].Score;
+                                    //
+                                    string[] scoreParts = response.TeamMatchesEntries[0].Score.Split('-');
+                                    Console.WriteLine("Score : " + response.TeamMatchesEntries[0].Score);
+                                    Console.WriteLine(scoreParts[0]);
+                                    Console.WriteLine(scoreParts[1]);
+                                    rencontre.ScoreHome = scoreParts[0];
+                                    rencontre.ScoreAway = scoreParts[1];
+                                    //
                                     rencontre.EquipeDom = response.TeamMatchesEntries[0].HomeTeam;
                                     rencontre.EquipeExt = response.TeamMatchesEntries[0].AwayTeam;
                                     rencontre.WeekNumber = int.Parse(response.TeamMatchesEntries[0].WeekName);

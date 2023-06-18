@@ -49,6 +49,25 @@ namespace Model
             set { _score = value; }
         }
 
+        private string _scoreHome;
+
+        public string ScoreHome
+        {
+            get { return _scoreHome; }
+            set { _scoreHome = value; }
+        }
+
+        private string _scoreAway;
+
+        public string ScoreAway
+        {
+            get { return _scoreAway; }
+            set { _scoreAway = value; }
+        }
+        
+
+
+
 
         private DetailsRencontre _details;
 

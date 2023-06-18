@@ -28,7 +28,7 @@ namespace ViewModel
             {
                 _rencontreSelectionne = value;
                 _rencontreSelectionne = GetRencontre.GetDetailsRencontre(_rencontreSelectionne);
-                Console.WriteLine(RencontreSelectionne.Details.JoueursDom[0].joueur.Nom);
+                Console.WriteLine(RencontreSelectionne.Score + RencontreSelectionne.ScoreHome);
                 OnPropertyChanged();
             }
         }
