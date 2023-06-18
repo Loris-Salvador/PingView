@@ -38,7 +38,7 @@ namespace AccesDB
             for(int i = 0; i < _divisions.Count; i++)
             {
                 request.DivisionId = _divisions[i];
-                for(int j = 1; j <4; j++)
+                for(int j = 1; j <23; j++)
                 {
                     
                     request.WeekName = j.ToString();
@@ -132,7 +132,39 @@ namespace AccesDB
             //GERER les details LET's GOOOOOOOO
 
 
-            return new Rencontre();
+
+            for(int i=0; i < int.Parse(response.TeamMatchesEntries[0].MatchDetails.HomePlayers.PlayerCount); i++)
+            {
+                joueurxResult joueurxResult = new joueurxResult();
+
+                Joueur j = new Joueur();
+                j = GetJoueur.getJoueurWithIndex(response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[i].UniqueIndex);
+
+                joueurxResult.result = response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[i].VictoryCount;
+
+                joueurxResult.joueur = j;
+
+                
+                r.Details.JoueursDom.Add(joueurxResult);
+                Console.WriteLine(r.Details.JoueursDom[i].joueur.Nom);
+            }
+
+            for (int i = 0; i < int.Parse(response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.PlayerCount); i++)
+            {
+                joueurxResult joueurxResult = new joueurxResult();
+
+                Joueur j = new Joueur();
+                j = GetJoueur.getJoueurWithIndex(response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[i].UniqueIndex);
+
+                joueurxResult.result = response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[i].VictoryCount;
+
+                joueurxResult.joueur = j;
+
+                r.Details.JoueursDom.Add(joueurxResult);
+
+            }
+
+            return r;
 
         }
     }

@@ -8,9 +8,8 @@ namespace Model
 {
     public struct joueurxResult
     {
-        public int result;
-        public string Joueur;
-        public StringComparer classement;
+        public string result;
+        public Joueur joueur;
     }
     public class DetailsRencontre
     {

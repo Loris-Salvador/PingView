@@ -59,8 +59,14 @@ namespace AccesDB
                 joueur.Classement = response.MemberEntries[0].Ranking;
                 joueur.NbVictoires = victoires;
                 joueur.NbDefaites = defaites;
-                joueur.Points = int.Parse(response.MemberEntries[0].RankingPointsEntries[1].Value);
-                joueur.Position = int.Parse(response.MemberEntries[0].RankingPointsEntries[2].Value);
+                if (response.MemberEntries[0].RankingPointsCount != "0")
+                {
+                    joueur.Points = int.Parse(response.MemberEntries[0].RankingPointsEntries[1].Value);
+                    joueur.Position = int.Parse(response.MemberEntries[0].RankingPointsEntries[2].Value);
+                }
+                else
+                    Console.WriteLine("GENIUS");
+
 
                 return joueur;
             }

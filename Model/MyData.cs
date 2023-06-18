@@ -13,7 +13,28 @@ namespace Model
     public class MyData
     {
 
-        public ObservableCollection<Note> Notes;
+        private ObservableCollection<Note> _notes;
+
+        public ObservableCollection<Note> Notes
+        {
+            get
+            {
+                return _notes;
+            }
+            set { _notes = value; }
+        }
+
+        private ObservableCollection<Rencontre> _rencontres;
+
+        public ObservableCollection<Rencontre> Rencontres
+        {
+            get
+            {
+                return _rencontres;
+            }
+            set { _rencontres = value; }
+        }
+
 
         private string _index;
 
@@ -26,6 +47,7 @@ namespace Model
         private MyData()
         {
             Notes = new ObservableCollection<Note>();
+            Rencontres = new ObservableCollection<Rencontre>();
         }
 
         private static MyData Instance = new MyData();
@@ -49,22 +71,28 @@ namespace Model
                 {
                     Notes.Add(note);
                 }
+                Rencontres.Clear();
+                foreach (Rencontre r in loadedData.Rencontres)
+                {
+                    Rencontres.Add(r);
+                }
             }
         }
 
         public void Save(string filename)
         {
-            MyData dataToSave = new MyData
-            {
-                Index = Index,
-                Notes = new ObservableCollection<Note>(Notes)
-            };
+            MyData dataToSave = MyData.getInstance(); // Utiliser l'instance existante
+
+            dataToSave.Index = Index;
+            dataToSave.Notes = new ObservableCollection<Note>(Notes);
+            //
+            dataToSave.Rencontres = new ObservableCollection<Rencontre>(Rencontres);
+            //
 
             string jsonData = JsonConvert.SerializeObject(dataToSave);
             File.WriteAllText(filename, jsonData);
-
-
         }
+
 
     }
 }

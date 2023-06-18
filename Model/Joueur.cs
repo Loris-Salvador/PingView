@@ -114,7 +114,7 @@ namespace Model
 
         public Joueur() : this("pas de nom", "pas de prenom", "pas de club", -1, -1, "pas de classement", -1, -1, "")
         {
-
+        
         }
 
 

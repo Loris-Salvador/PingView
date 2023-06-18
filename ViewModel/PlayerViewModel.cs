@@ -28,9 +28,11 @@ namespace ViewModel
             {
                 _rencontreSelectionne = value;
                 _rencontreSelectionne = GetRencontre.GetDetailsRencontre(_rencontreSelectionne);
+                Console.WriteLine(_rencontreSelectionne.Details.JoueursDom[0].joueur.Nom);
                 OnPropertyChanged();
             }
         }
+
 
         private Joueur _mainJoueur;
         public Joueur MainJoueur
@@ -51,12 +53,12 @@ namespace ViewModel
             set { _notes =  value; }    
         }
 
-        private ObservableCollection<Rencontre> _rencontres = new ObservableCollection<Rencontre>();
+        //private ObservableCollection<Rencontre> _rencontres = new ObservableCollection<Rencontre>();
 
         public ObservableCollection<Rencontre> Rencontres
         {
-            get { return _rencontres; }
-            set { _rencontres = value; }
+            get { return _data.Rencontres; }
+            set { _data.Rencontres = value; }
         }
 
         private int _spanJoueur = 1;
@@ -123,6 +125,7 @@ namespace ViewModel
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
+            _rencontreSelectionne = new Rencontre();//necessaire?
 
             _data.Load("FichierTest.json");
 
@@ -140,8 +143,8 @@ namespace ViewModel
             MainJoueur = GetJoueur.getJoueurWithIndex(_data.Index);
 
 
-            _rencontres = new ObservableCollection<Rencontre>();
-            _rencontres = GetRencontre.GetRencontresJoueur(MainJoueur);//F
+            
+            //Rencontres = GetRencontre.GetRencontresJoueur(MainJoueur);//charger dans un cas precis
             
 
 
