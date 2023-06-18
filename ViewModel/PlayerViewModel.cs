@@ -118,14 +118,14 @@ namespace ViewModel
 
         public ICommand NoteCommand { get; }
         public ICommand RechercherCommand { get; }
-        public ICommand CalculateurCommand { get; }
+        //public ICommand CalculateurCommand { get; }
         public ICommand AjouterNoteCommand { get; }
         public ICommand SupprimerNoteCommand { get; }
         public ICommand ParametreCommand { get; }
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
-            _rencontreSelectionne = new Rencontre();//necessaire?
+            _rencontreSelectionne = new Rencontre();
 
             _data.Load(MyRegistryParam.Path + "/Data.json");
 

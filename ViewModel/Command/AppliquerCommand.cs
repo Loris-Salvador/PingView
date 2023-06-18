@@ -19,11 +19,12 @@ namespace ViewModel.Command
             {
                 MyData.getInstance().Index = _viewModel.NewIndex;
                 MyData.getInstance().Reload = true;
+                _viewModel.IsMessageVisible = true;
             }
             if(_viewModel.PathFichier != "")
                 MyRegistryParam.Path = _viewModel.PathFichier;
 
-            _viewModel.IsMessageVisible = true;
+            
         }
     }
 }
