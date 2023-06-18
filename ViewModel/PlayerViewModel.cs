@@ -28,7 +28,7 @@ namespace ViewModel
             {
                 _rencontreSelectionne = value;
                 _rencontreSelectionne = GetRencontre.GetDetailsRencontre(_rencontreSelectionne);
-                Console.WriteLine(_rencontreSelectionne.Details.JoueursDom[0].joueur.Nom);
+                Console.WriteLine(RencontreSelectionne.Details.JoueursDom[0].joueur.Nom);
                 OnPropertyChanged();
             }
         }
@@ -53,7 +53,6 @@ namespace ViewModel
             set { _notes =  value; }    
         }
 
-        //private ObservableCollection<Rencontre> _rencontres = new ObservableCollection<Rencontre>();
 
         public ObservableCollection<Rencontre> Rencontres
         {

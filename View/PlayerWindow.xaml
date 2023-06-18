@@ -228,43 +228,43 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[0].joueur.Nom, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[1].joueur.Classement}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[2].joueur.Classement}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[3].joueur.Classement}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[0].joueur.Classement, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[1].joueur.Classement, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[2].joueur.Classement, Mode=TwoWay}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[3].joueur.Classement, Mode=TwoWay}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
 
 
-                    <TextBlock Text="Tiege E" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="Aywaille A" Grid.Column="5" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.EquipeDom, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.EquipeExt, Mode=TwoWay}" Grid.Column="5" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
 
                     <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[0].joueur.Classement, Mode=TwoWay}" Grid.Column="4" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="C2" Grid.Column="4" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="C4" Grid.Column="4" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="C4" Grid.Column="4" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[1].joueur.Classement, Mode=TwoWay}" Grid.Column="4" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[2].joueur.Classement, Mode=TwoWay}" Grid.Column="4" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[3].joueur.Classement, Mode=TwoWay}" Grid.Column="4" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
 
 
-                    <TextBlock Text="Salvador Loris" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
-                    <TextBlock Text="Desanfant Julien" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
-                    <TextBlock Text="Commeliau Guillaume" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
-                    <TextBlock Text="Deumer David" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[0].joueur.Nom, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[1].joueur.Nom, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[2].joueur.Nom, Mode=TwoWay}" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[3].joueur.Nom, Mode=TwoWay}" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
 
-                    <TextBlock Text="Pirard Damien" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
-                    <TextBlock Text="Nolf Sebastien" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
-                    <TextBlock Text="De Ketele Nicolas" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
-                    <TextBlock Text="Vanguestaine Luc" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[0].joueur.Nom, Mode=TwoWay}" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[1].joueur.Nom, Mode=TwoWay}" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[2].joueur.Nom, Mode=TwoWay}" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[3].joueur.Nom, Mode=TwoWay}" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
 
-                    <TextBlock Text="4" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="4" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="3" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="4" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[0].result, Mode=TwoWay}" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[1].result, Mode=TwoWay}" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[2].result, Mode=TwoWay}" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursDom[3].result, Mode=TwoWay}" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
 
-                    <TextBlock Text="1" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="0" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="0" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
-                    <TextBlock Text="0" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[0].result, Mode=TwoWay}" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[1].result, Mode=TwoWay}" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[2].result, Mode=TwoWay}" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                    <TextBlock Text="{Binding RencontreSelectionne.Details.JoueursExt[3].result, Mode=TwoWay}" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
 
-                    <TextBlock Text="15" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left"  FontSize="11" />
-                    <TextBlock Text="1" Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="11" />
+                    <TextBlock Text="" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left"  FontSize="11" />
+                    <TextBlock Text="" Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="11" />
 
                     <!--<TextBlock Text="Voir plus" Grid.ColumnSpan="7" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="11" Margin="0 0 12 0" Cursor="AppStarting"/>-->
 

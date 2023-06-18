@@ -8,8 +8,8 @@ namespace Model
 {
     public struct joueurxResult
     {
-        public string result;
-        public Joueur joueur;
+        public string result { get; set; }
+        public Joueur joueur { get;set; }
     }
     public class DetailsRencontre
     {

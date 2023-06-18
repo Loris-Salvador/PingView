@@ -60,9 +60,9 @@ namespace Model
 
         public Rencontre()
         {
-            EquipeDom = "Pas d'equipe";
-            EquipeExt = "Pas d'equipe";
-            Score = "Pas de score";
+            EquipeDom = "";
+            EquipeExt = "";
+            Score = "";
             Details = new DetailsRencontre();
         }
 

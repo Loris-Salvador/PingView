@@ -160,7 +160,7 @@ namespace AccesDB
 
                 joueurxResult.joueur = j;
 
-                r.Details.JoueursDom.Add(joueurxResult);
+                r.Details.JoueursExt.Add(joueurxResult);
 
             }
 
