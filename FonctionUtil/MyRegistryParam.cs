@@ -35,6 +35,12 @@ namespace FonctionUtil
             set => SetValue(value);
         }
 
+        public static string Path
+        {
+            get => GetValueOrDefault2();
+            set => SetValue(value);
+        }
+
         private static int GetValueOrDefault([CallerMemberName] string propertyName = "")
         {
             using (var registryKey = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
@@ -62,5 +68,35 @@ namespace FonctionUtil
                 }
             }
         }
+
+
+        private static string GetValueOrDefault2([CallerMemberName] string propertyName = "")
+        {
+            using (var registryKey = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
+            {
+                if (registryKey != null)
+                {
+                    var value = registryKey.GetValue(propertyName);
+                    if (value != null)
+                    {
+                        return value.ToString();
+                    }
+                }
+            }
+
+            return null; // Valeur par défaut si la clé ou la valeur n'existent pas
+        }
+
+        private static void SetValue(string value, [CallerMemberName] string propertyName = "")
+        {
+            using (var registryKey = Registry.CurrentUser.CreateSubKey(RegistryKeyPath))
+            {
+                if (registryKey != null)
+                {
+                    registryKey.SetValue(propertyName, value);
+                }
+            }
+        }
+
     }
 }

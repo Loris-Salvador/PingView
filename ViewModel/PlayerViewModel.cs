@@ -142,9 +142,11 @@ namespace ViewModel
             MainJoueur = GetJoueur.getJoueurWithIndex(_data.Index);
 
 
-            
-            //Rencontres = GetRencontre.GetRencontresJoueur(MainJoueur);//charger dans un cas precis
-            
+            if(_data.Reload == true)
+                Rencontres = GetRencontre.GetRencontresJoueur(MainJoueur);//charger dans un cas precis
+            _data.Reload = false;
+
+
 
 
             AjouterNoteCommand = new AjouterNoteCommand(this);

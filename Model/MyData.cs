@@ -12,6 +12,12 @@ namespace Model
 {
     public class MyData
     {
+        private bool _reload = false;
+        public bool Reload
+        {
+            get { return _reload; }
+            set { _reload = value; }
+        }
 
         private ObservableCollection<Note> _notes;
 
@@ -66,15 +72,19 @@ namespace Model
             if (loadedData != null)
             {
                 Index = loadedData.Index;
+                Reload = loadedData.Reload;
                 Notes.Clear();
                 foreach (Note note in loadedData.Notes)
                 {
                     Notes.Add(note);
                 }
-                Rencontres.Clear();
-                foreach (Rencontre r in loadedData.Rencontres)
+                if(Reload == false)
                 {
-                    Rencontres.Add(r);
+                    Rencontres.Clear();
+                    foreach (Rencontre r in loadedData.Rencontres)
+                    {
+                        Rencontres.Add(r);
+                    }
                 }
             }
         }
@@ -84,10 +94,10 @@ namespace Model
             MyData dataToSave = MyData.getInstance(); // Utiliser l'instance existante
 
             dataToSave.Index = Index;
+            dataToSave.Reload = Reload;
             dataToSave.Notes = new ObservableCollection<Note>(Notes);
-            //
-            dataToSave.Rencontres = new ObservableCollection<Rencontre>(Rencontres);
-            //
+            if(Reload == false)
+                dataToSave.Rencontres = new ObservableCollection<Rencontre>(Rencontres);
 
             string jsonData = JsonConvert.SerializeObject(dataToSave);
             File.WriteAllText(filename, jsonData);

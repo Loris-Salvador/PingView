@@ -23,6 +23,7 @@ namespace ViewModel
             set
             {
                 _joueurSelectionne = value;
+                if (value == null) { return; }
                 _joueurSelectionne = GetJoueur.getJoueurWithIndex(_joueurSelectionne.Index);
                 Visibility = true;
                 OnPropertyChanged();

@@ -27,8 +27,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
+            <!--<RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>-->
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
@@ -37,16 +37,16 @@
             <TextBlock Text="Nom :" VerticalAlignment="Center" FontSize="14" Foreground="Silver"/>
             <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="#000000" MinWidth="50" Background="#E5E5E5" BorderBrush="Transparent"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0,0,0">
+        <!--<StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0,0,0">
             <TextBlock Text="Club :" VerticalAlignment="Center" FontSize="14" Foreground="Silver"/>
             <TextBox Text="{Binding Club, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#000000" FontSize="14" MinWidth="50" Background="#E5E5E5" BorderBrush="Transparent"/>
-        </StackPanel>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,0,0,0">
+        </StackPanel>-->
+        <!--<StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,0,0,0">
             <TextBlock Text="Classement :" VerticalAlignment="Center" FontSize="14" Foreground="Silver"/>
             <TextBox Text="" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="#000000" Background="#E5E5E5" MinWidth="50" BorderBrush="Transparent"/>
-        </StackPanel>
+        </StackPanel>-->
 
-        <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding ListeJoueur, Mode=TwoWay}" SelectedValue="{Binding JoueurSelectionne}" Grid.Column="0" Grid.Row="5" Margin="10">
+        <ListView x:Name="matches" Background="#203735" ItemsSource="{Binding ListeJoueur, Mode=TwoWay}" SelectedValue="{Binding JoueurSelectionne}" Grid.Column="0" Grid.Row="3" Margin="10">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>

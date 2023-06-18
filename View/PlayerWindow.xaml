@@ -33,9 +33,9 @@
                 <Image Source="C:\Users\loris\Desktop\HEPL\C#\labo-final-LorisSal\PingView\Images/loupe.png" Margin="5 0 5 0"/>
             </Button>
 
-            <Button Background="Transparent" Command="{Binding CalculateurCommand}" BorderBrush="Transparent">
+            <!--<Button Background="Transparent" Command="{Binding CalculateurCommand}" BorderBrush="Transparent">
                 <Image Source="C:\Users\loris\Desktop\HEPL\C#\labo-final-LorisSal\PingView\Images/calculator.png"/>
-            </Button>
+            </Button>-->
 
             <Button Background="Transparent" Command="{Binding NoteCommand}" BorderBrush="Transparent" Margin="10 0 0 0">
                 <Image Source="C:\Users\loris\Desktop\HEPL\C#\labo-final-LorisSal\PingView\Images/notes.png"/>

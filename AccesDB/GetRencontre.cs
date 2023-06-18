@@ -52,7 +52,7 @@ namespace AccesDB
                         {
                             try
                             {
-                                if (!response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[k].IsForfeited && response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[k].UniqueIndex == "150121")
+                                if (!response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[k].IsForfeited && response.TeamMatchesEntries[0].MatchDetails.HomePlayers.Players[k].UniqueIndex == MyData.getInstance().Index)
                                 {
                                     Rencontre rencontre = new Rencontre();
 
@@ -77,7 +77,7 @@ namespace AccesDB
                         { 
                             try
                             {
-                                if (!response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[k].IsForfeited && response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[k].UniqueIndex == "150121")
+                                if (!response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[k].IsForfeited && response.TeamMatchesEntries[0].MatchDetails.AwayPlayers.Players[k].UniqueIndex == MyData.getInstance().Index)
                                 {
                                     Rencontre rencontre = new Rencontre();
 

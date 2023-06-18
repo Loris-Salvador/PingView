@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using FonctionUtil;
 
 namespace ViewModel.Command
 {
@@ -14,7 +15,15 @@ namespace ViewModel.Command
         public AppliquerCommand(ParametreViewModel vm) { _viewModel = vm; }
         public override void Execute(object parameter)
         {
-            MyData.getInstance().Index =  _viewModel.NewIndex;
+            if(_viewModel.NewIndex != "")
+            {
+                MyData.getInstance().Index = _viewModel.NewIndex;
+                MyData.getInstance().Reload = true;
+            }
+            if(_viewModel.PathFichier != "")
+                MyRegistryParam.Path = _viewModel.PathFichier;
+
+            _viewModel.IsMessageVisible = true;
         }
     }
 }

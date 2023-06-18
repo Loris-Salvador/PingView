@@ -72,7 +72,7 @@ namespace AccesDB
             }
             catch(Exception ex)
             {
-                Console.WriteLine("YOOO" + ex.Message);
+                Console.WriteLine(ex.Message);
                 return new Joueur();
             }
             //return new Joueur();

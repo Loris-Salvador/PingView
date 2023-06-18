@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="ParametreWindow" Height="200" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="ParametreWindow" Background="Gray" Height="200" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         >
+
+    <Window.Resources>
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -15,15 +19,16 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left">
-            <TextBlock Text="Path Registry" Margin="0,0,10,0"/> 
-            <TextBox MinWidth="60"/>
+            <TextBlock Text="Path Registry" Margin="0,0,10,0"/>
+            <TextBox Background="AliceBlue" Text="{Binding PathFichier}" MinWidth="60"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left">
             <TextBlock Text="Index Joueur Principal" Margin="0,0,10,0"/>
-            <TextBox MinWidth="60" Text="{Binding NewIndex}"/>
+            <TextBox Background="AliceBlue" MinWidth="60" Text="{Binding NewIndex}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,30,0" VerticalAlignment="Center" HorizontalAlignment="Right">
             <Button Content="Appliquer" Command="{Binding AppliquerCommand}"/>
         </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Visibility="{Binding IsMessageVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="21,0,0,0" Grid.Row="2" Foreground="Red" TextWrapping="Wrap" Text="Un Redemarrage est nécessaire" VerticalAlignment="Center" Height="20" Width="170"/>
     </Grid>
 </Window>

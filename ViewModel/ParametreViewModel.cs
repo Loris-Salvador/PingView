@@ -12,13 +12,43 @@ namespace ViewModel
 {
     public class ParametreViewModel : ViewModelBase
     {
-        public string NewIndex { get; set; }
+        private string _newIndew = "";
+
+        public string NewIndex
+        {
+            get { return _newIndew; }
+            set
+            {
+                if (value == "") return;
+                _newIndew = value;
+            }
+        }
+        private string _pathFichier = "";
+        public string PathFichier
+        {
+            get { return _pathFichier; }
+            set { 
+                if (value == "") return;
+                _pathFichier = value;
+            }
+        }
+
+        private bool _isMessageVisible = false;
+        public bool IsMessageVisible
+        {
+            get { return _isMessageVisible; }
+
+            set
+            {
+                if (value == _isMessageVisible) return;
+                _isMessageVisible = value;
+                OnPropertyChanged();
+            }
+        }
         public ICommand AppliquerCommand { get; }
         public ParametreViewModel()
         {
             AppliquerCommand = new AppliquerCommand(this);
         }
-        
-
     }
 }
