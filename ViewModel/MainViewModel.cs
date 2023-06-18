@@ -10,6 +10,19 @@ namespace ViewModel
         private readonly NavigationStore _navigationStore;
         public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
+        public bool Maximised
+        {
+            get => MyRegistryParam.Maximised;
+            set
+            {
+                if (MyRegistryParam.Maximised != value)
+                {
+                    MyRegistryParam.Maximised = value;
+                    OnPropertyChanged(nameof(Maximised));
+                }
+            }
+        }
+
         public int PositionX
         {
             get => MyRegistryParam.PositionX;
@@ -67,6 +80,7 @@ namespace ViewModel
             PositionY = MyRegistryParam.PositionY;
             DimensionX = MyRegistryParam.DimensionX;
             DimensionY = MyRegistryParam.DimensionY;
+            Maximised = MyRegistryParam.Maximised;
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }

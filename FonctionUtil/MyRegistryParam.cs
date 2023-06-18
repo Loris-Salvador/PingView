@@ -11,6 +11,12 @@ namespace FonctionUtil
     public static class MyRegistryParam
     {
         private static readonly string RegistryKeyPath = "SOFTWARE\\HEPL\\PingView";
+
+        public static bool Maximised
+        {
+            get => GetValueOrDefault3();
+            set => SetValue(value);
+        }
         public static int PositionX
         {
             get => GetValueOrDefault();
@@ -97,6 +103,38 @@ namespace FonctionUtil
                 }
             }
         }
+
+        private static bool GetValueOrDefault3([CallerMemberName] string propertyName = "")
+        {
+            using (var registryKey = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
+            {
+                if (registryKey != null)
+                {
+                    var value = registryKey.GetValue(propertyName);
+                    if (value != null && int.TryParse(value.ToString(), out int propertyValue))
+                    {
+                        return propertyValue != 0;
+                    }
+                }
+            }
+
+            return false; // Valeur par défaut si la clé ou la valeur n'existent pas
+        }
+
+        private static void SetValue(bool value, [CallerMemberName] string propertyName = "")
+        {
+            int intValue = value ? 1 : 0;
+
+            using (var registryKey = Registry.CurrentUser.CreateSubKey(RegistryKeyPath))
+            {
+                if (registryKey != null)
+                {
+                    registryKey.SetValue(propertyName, intValue);
+                }
+            }
+        }
+
+
 
     }
 }
