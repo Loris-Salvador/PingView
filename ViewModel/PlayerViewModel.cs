@@ -12,6 +12,7 @@ using ViewModel.Navigation;
 using AccesDB;
 using System.Collections.ObjectModel;
 using ViewModel.Wrappers;
+using FonctionUtil;
 
 namespace ViewModel
 {
@@ -126,7 +127,7 @@ namespace ViewModel
         {
             _rencontreSelectionne = new Rencontre();//necessaire?
 
-            _data.Load("FichierTest.json");
+            _data.Load(MyRegistryParam.Path + "/Data.json");
 
             foreach (Note note in _data.Notes)
             {
@@ -169,7 +170,7 @@ namespace ViewModel
                 _data.Notes.Add(n);
             }
 
-            _data.Save("FichierTest.json");
+            _data.Save(MyRegistryParam.Path + "/Data.json");
 
             base.Dispose();
         }
