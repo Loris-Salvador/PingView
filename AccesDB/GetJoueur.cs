@@ -20,8 +20,6 @@ namespace AccesDB
         {
             try
             {
-
-
                 TabTAPI_PortTypeClient client = new TabTAPI_PortTypeClient();
 
                 string xmlRequest = "<GetMembersRequest xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <UniqueIndex xmlns=\"http://api.frenoy.net/TabTAPI\">" + id + "</UniqueIndex>\r\n  <RankingPointsInformation xmlns=\"http://api.frenoy.net/TabTAPI\">1</RankingPointsInformation>\r\n  <WithResults xmlns=\"http://api.frenoy.net/TabTAPI\">1</WithResults>\r\n</GetMembersRequest>";

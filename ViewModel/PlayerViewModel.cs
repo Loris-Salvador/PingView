@@ -13,6 +13,7 @@ using AccesDB;
 using System.Collections.ObjectModel;
 using ViewModel.Wrappers;
 using FonctionUtil;
+using System.Diagnostics;
 
 namespace ViewModel
 {
@@ -171,6 +172,7 @@ namespace ViewModel
             }
 
             _data.Save(MyRegistryParam.Path + "/Data.json");
+
 
             base.Dispose();
         }

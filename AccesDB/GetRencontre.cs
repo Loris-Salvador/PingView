@@ -96,7 +96,6 @@ namespace AccesDB
                                     rencontre.WeekNumber = int.Parse(response.TeamMatchesEntries[0].WeekName);
                                     rencontre.UniqueMatchId = response.TeamMatchesEntries[0].MatchUniqueId;
 
-
                                     rencontres.Add(rencontre);
 
                                     break;
