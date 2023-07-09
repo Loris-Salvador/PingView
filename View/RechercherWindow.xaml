@@ -32,7 +32,7 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Rechercher :" FontSize="18"  VerticalAlignment="Center" Foreground="Silver" Margin="10"/>
+        <!--<TextBlock Text="Rechercher :" FontSize="18"  VerticalAlignment="Center" Foreground="Silver" Margin="10"/>-->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,0,0,0">
             <TextBlock Text="Nom :" VerticalAlignment="Center" FontSize="14" Foreground="Silver"/>
             <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="#000000" MinWidth="50" Background="#E5E5E5" BorderBrush="Transparent"/>

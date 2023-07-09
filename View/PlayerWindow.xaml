@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" >
+             d:DesignHeight="450" d:DesignWidth="800">
     
     <UserControl.Resources>
         <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -37,15 +37,15 @@
                 <Image Source="C:\Users\loris\Desktop\HEPL\C#\labo-final-LorisSal\PingView\Images/calculator.png"/>
             </Button>-->
 
-            <Button Background="Transparent" Command="{Binding NoteCommand}" BorderBrush="Transparent" Margin="10 0 0 0">
+            <!--<Button Background="Transparent" Command="{Binding NoteCommand}" BorderBrush="Transparent" Margin="10 0 0 0">
                 <Image Source="C:\Users\loris\Projets\PingView\Images/notes.png"/>
-            </Button>
+            </Button>-->
         </StackPanel>
         
         <!--Notes-->
         
         
-        <Grid x:Name="Notes" Background="Transparent" Width="400" DockPanel.Dock="Left" Visibility="{Binding IsGridNotesVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <!--<Grid x:Name="Notes" Background="Transparent" Width="400" DockPanel.Dock="Left" Visibility="{Binding IsGridNotesVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height ="0.6*"/>
                 <RowDefinition Height ="3.5*"/>
@@ -67,7 +67,7 @@
                     <DataGridTextColumn Header="Date" Binding="{Binding Created, Mode=TwoWay}" Width="0.65*"/>
                 </DataGrid.Columns>
             </DataGrid>
-        </Grid>
+        </Grid>-->
         
         <!--Rechercher Joueur-->
         

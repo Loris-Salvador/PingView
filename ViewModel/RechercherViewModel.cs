@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ViewModel.Command;
 using ViewModel.Navigation;
-using ViewModel.Wrappers;
 using AccesDB;
 
 namespace ViewModel

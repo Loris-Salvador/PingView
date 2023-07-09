@@ -43,20 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\AjouterNoteCommand.cs" />
     <Compile Include="Command\AppliquerCommand.cs" />
     <Compile Include="Command\HomeCommand.cs" />
-    <Compile Include="Command\NoteCommand.cs" />
     <Compile Include="Command\ParametreCommand.cs" />
     <Compile Include="Command\RechercherCommand.cs" />
-    <Compile Include="Command\SupprimerNoteCommand.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Navigation\NavigationStore.cs" />
     <Compile Include="ParametreViewModel.cs" />
     <Compile Include="PlayerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechercherViewModel.cs" />
-    <Compile Include="Wrappers\NoteWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesDB\AccesDB.csproj">

@@ -11,9 +11,9 @@ using ViewModel.Command;
 using ViewModel.Navigation;
 using AccesDB;
 using System.Collections.ObjectModel;
-using ViewModel.Wrappers;
 using FonctionUtil;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace ViewModel
 {
@@ -44,15 +44,8 @@ namespace ViewModel
             {
                 if (_mainJoueur == value) return;
                 _mainJoueur = value;
+               
             }
-        }
-
-        private ObservableCollection<WrapperNote> _notes = new ObservableCollection<WrapperNote>();
-
-        public ObservableCollection<WrapperNote> notes
-        {
-            get { return _notes; }
-            set { _notes =  value; }    
         }
 
 
@@ -84,64 +77,32 @@ namespace ViewModel
             set
             {
                 if (value == _isGridMatchesVisible) return;
+                if (value == true)
+                    SpanJoueur = 1;
+                else
+                {
+                    SpanJoueur = 3;
+                }
                 _isGridMatchesVisible = value;
                 OnPropertyChanged();
             }
         }
 
-        private bool _isGridNotesVisible = false;
-
-        public bool IsGridNotesVisible
-        {
-            get { return _isGridNotesVisible; }
-
-            set
-            {
-                if (value == _isGridNotesVisible) return;
-                _isGridNotesVisible = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private int _selectedNote;
-
-        public int SelectedNote
-        {
-            get { return _selectedNote; }
-            set
-            {
-                if (value == _selectedNote) return;
-                _selectedNote = value;
-                OnPropertyChanged();
-            }
-        }
 
 
-        public ICommand NoteCommand { get; }
         public ICommand RechercherCommand { get; }
-        //public ICommand CalculateurCommand { get; }
-        public ICommand AjouterNoteCommand { get; }
-        public ICommand SupprimerNoteCommand { get; }
         public ICommand ParametreCommand { get; }
 
         public PlayerViewModel(NavigationStore navigationStore)
         {
             _rencontreSelectionne = new Rencontre();
 
-            _data.Load(MyRegistryParam.Path + "/Data.json");
-
-            foreach (Note note in _data.Notes)
-            {
-                WrapperNote n = new WrapperNote(new Note());
-                n.Nom = note.Nom;
-                n.Description = note.Description;
-                n.Created = note.Created;
-                notes.Add(n);
-            }
-            _data.Notes.Clear();
+            _data.Load("Data.json");
 
 
             MainJoueur = GetJoueur.getJoueurWithIndex(_data.Index);
+
+            Console.WriteLine(MainJoueur);
 
 
             if(_data.Reload == true)
@@ -149,30 +110,13 @@ namespace ViewModel
             _data.Reload = false;
 
 
-
-
-            AjouterNoteCommand = new AjouterNoteCommand(this);
-            NoteCommand = new NoteCommand(this);
             RechercherCommand = new RechercherCommand(navigationStore);
-            SupprimerNoteCommand = new SupprimerNoteCommand(this);
             ParametreCommand = new ParametreCommand(navigationStore);
         }
 
         public override void Dispose()
         {
-
-
-            foreach (WrapperNote wrapperNote in _notes)
-            {
-                Note n = new Note();
-                n.Nom = wrapperNote.Nom;
-                n.Description = wrapperNote.Description;
-                n.Created = wrapperNote.Created;
-                _data.Notes.Add(n);
-            }
-
-            _data.Save(MyRegistryParam.Path + "/Data.json");
-
+            _data.Save("Data.json");
 
             base.Dispose();
         }

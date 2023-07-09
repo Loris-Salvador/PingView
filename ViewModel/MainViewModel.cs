@@ -10,6 +10,8 @@ namespace ViewModel
         private readonly NavigationStore _navigationStore;
         public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
+       
+
         public bool Maximised
         {
             get => MyRegistryParam.Maximised;
@@ -50,14 +52,24 @@ namespace ViewModel
 
         public int DimensionX
         {
-            get => MyRegistryParam.DimensionX;
+            get => MyRegistryParam.DimensionX; 
             set
             {
-                if (MyRegistryParam.DimensionX != value)
-                {
+/*                if (MyRegistryParam.DimensionX != value)
+                {*/
+                    if (DimensionX < 900 && _navigationStore.CurrentViewModel.GetType().ToString() == "ViewModel.PlayerViewModel")
+                    {
+                        PlayerViewModel playerViewModel = (PlayerViewModel)CurrentViewModel;
+                        playerViewModel.IsGridMatchesVisible = false; // envisager de le faire dans le viewModel base
+                    }
+                    else if (DimensionX > 900 && _navigationStore.CurrentViewModel.GetType().ToString() == "ViewModel.PlayerViewModel")
+                    {
+                        PlayerViewModel playerViewModel = (PlayerViewModel)CurrentViewModel;
+                        playerViewModel.IsGridMatchesVisible = true;
+                    }
                     MyRegistryParam.DimensionX = value;
                     OnPropertyChanged(nameof(DimensionX));
-                }
+                //}
             }
         }
 
@@ -74,14 +86,16 @@ namespace ViewModel
             }
         }
 
+
         public MainViewModel(NavigationStore navigationStore)
         {
+            _navigationStore = navigationStore;
             PositionX = MyRegistryParam.PositionX;
             PositionY = MyRegistryParam.PositionY;
             DimensionX = MyRegistryParam.DimensionX;
             DimensionY = MyRegistryParam.DimensionY;
             Maximised = MyRegistryParam.Maximised;
-            _navigationStore = navigationStore;
+            Console.WriteLine("Type" + _navigationStore.CurrentViewModel.GetType().ToString());
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 

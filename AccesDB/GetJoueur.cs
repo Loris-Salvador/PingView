@@ -59,8 +59,8 @@ namespace AccesDB
                 joueur.NbDefaites = defaites;
                 if (response.MemberEntries[0].RankingPointsCount != "0")
                 {
-                    joueur.Points = int.Parse(response.MemberEntries[0].RankingPointsEntries[1].Value);
-                    joueur.Position = int.Parse(response.MemberEntries[0].RankingPointsEntries[2].Value);
+/*                    joueur.Points = int.Parse(response.MemberEntries[0].RankingPointsEntries[1].Value); //probleme en ce moment a la data base
+                    joueur.Position = int.Parse(response.MemberEntries[0].RankingPointsEntries[2].Value);*/
                 }
                 else
                     Console.WriteLine("GENIUS");
@@ -71,9 +71,9 @@ namespace AccesDB
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return new Joueur();
+                Console.WriteLine("YOOOOOO");
             }
-            //return new Joueur();
+            return new Joueur();
         
         }
 

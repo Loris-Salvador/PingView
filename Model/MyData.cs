@@ -19,17 +19,6 @@ namespace Model
             set { _reload = value; }
         }
 
-        private ObservableCollection<Note> _notes;
-
-        public ObservableCollection<Note> Notes
-        {
-            get
-            {
-                return _notes;
-            }
-            set { _notes = value; }
-        }
-
         private ObservableCollection<Rencontre> _rencontres;
 
         public ObservableCollection<Rencontre> Rencontres
@@ -52,7 +41,6 @@ namespace Model
 
         private MyData()
         {
-            Notes = new ObservableCollection<Note>();
             Rencontres = new ObservableCollection<Rencontre>();
         }
 
@@ -73,11 +61,6 @@ namespace Model
             {
                 Index = loadedData.Index;
                 Reload = loadedData.Reload;
-                Notes.Clear();
-                foreach (Note note in loadedData.Notes)
-                {
-                    Notes.Add(note);
-                }
                 if(Reload == false)
                 {
                     Rencontres.Clear();
@@ -95,7 +78,6 @@ namespace Model
 
             dataToSave.Index = Index;
             dataToSave.Reload = Reload;
-            dataToSave.Notes = new ObservableCollection<Note>(Notes);
             if(Reload == false)
                 dataToSave.Rencontres = new ObservableCollection<Rencontre>(Rencontres);
 
